@@ -1,0 +1,36 @@
+.line {
+  background-color: white;
+  width: 100%;
+  height: 2px;
+  transition-property: transform opacity;
+  transition-duration: 500ms;
+}
+
+.line-1-onClick {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.line-2-onClick {
+  transform: translateX(20px);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.line-3-onClick {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.hamburger {
+  width: 40px;
+  height: 20px;
+  display: flex;
+  padding: 5px 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.hamburger:hover {
+  background-color: gray;
+  border-radius: 100% 100%;
+}

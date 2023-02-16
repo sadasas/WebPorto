@@ -1,0 +1,15 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar:first-child {
+  padding: 14px 20px;
+}
+
+.logo {
+  color: white;
+  font-size: 1.5em;
+}
