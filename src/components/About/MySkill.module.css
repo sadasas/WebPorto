@@ -3,6 +3,14 @@
   flex: 1;
   flex-direction: column;
   align-items: end;
+  transition: all;
+  transition-duration: 600ms;
+  transition-delay: 500ms;
+}
+
+.mySkill-inactive {
+  width: 0;
+  opacity: 0;
 }
 
 .skill {
@@ -20,11 +28,11 @@
   background-color: grey;
 }
 
-h1 {
+.mySkill h1 {
   font-size: 2rem;
 }
 
-h2 {
+.mySkill h2 {
   font-size: 1.5rem;
   font-weight: 100;
   line-height: 2rem;

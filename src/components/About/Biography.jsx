@@ -1,9 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./Biography.module.css";
 
-function Biography() {
+function Biography({ isActive }) {
   return (
-    <div className={styles.biography}>
+    <div
+      className={`${styles.biography} ${
+        isActive ? null : styles["biography-inactive"]
+      }`}
+    >
       <h1>Biography</h1>
       <h2>
         {" "}
@@ -15,5 +20,9 @@ function Biography() {
     </div>
   );
 }
+
+Biography.propTypes = {
+  isActive: PropTypes.bool,
+};
 
 export default Biography;

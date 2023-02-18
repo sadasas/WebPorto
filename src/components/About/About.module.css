@@ -2,6 +2,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   padding: 20px;
   justify-content: space-around;
   color: white;
@@ -18,6 +19,14 @@
   justify-content: center;
   overflow: hidden;
   padding: 40px;
+  transition: all;
+  transition-duration: 600ms;
+}
+
+.photo-inactive {
+  width: 0;
+  opacity: 0;
+  transform: translateY(-100px);
 }
 
 .photo-content {

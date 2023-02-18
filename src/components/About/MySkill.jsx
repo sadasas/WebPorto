@@ -19,9 +19,13 @@ Skill.propTypes = {
   level: PropTypes.string,
 };
 
-function MySkill() {
+function MySkill({ isActive }) {
   return (
-    <div className={styles.mySkill}>
+    <div
+      className={`${styles.mySkill} ${
+        isActive ? null : styles["mySkill-inactive"]
+      }`}
+    >
       <h1>My Skill</h1>
       <Skill text="C/C++" level="Beginner" />
       <Skill text="Javascript" level="Intermediate" />
@@ -31,5 +35,7 @@ function MySkill() {
     </div>
   );
 }
-
+MySkill.propTypes = {
+  isActive: PropTypes.bool,
+};
 export default MySkill;
