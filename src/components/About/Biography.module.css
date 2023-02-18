@@ -1,0 +1,17 @@
+.biography {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 100;
+  line-height: 2rem;
+}

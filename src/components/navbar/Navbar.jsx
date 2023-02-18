@@ -11,7 +11,7 @@ function Navbar() {
   return (
     <section id="navbar">
       <nav className={styles.navbar}>
-        <h2 className={styles.logo}>Nrawang Studio</h2>
+        <h2 className={styles.logo}>WSRP</h2>
         <Hamburger
           hamburgerOpen={hamburgerOpen}
           toggleHamburger={toggleHamburger}

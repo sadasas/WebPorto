@@ -14,7 +14,7 @@ const text = [
 
 function Introduction() {
   return (
-    <section id={styles.introduction}>
+    <section id="introduction" className={styles.introduction}>
       <TypedText text={text} delay={100} />
     </section>
   );
