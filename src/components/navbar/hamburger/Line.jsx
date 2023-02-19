@@ -1,8 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
+
 import Styles from "./Hamburger.module.css";
 
-function Line({ isOpen, index }) {
+export function Line({ index }) {
+  const { value: isOpen } = useSelector((state) => state.hamburgerToggle);
+
   function lineAnim() {
     if (isOpen) {
       if (index == 1) return Styles["line-1-onClick"];
@@ -17,19 +21,3 @@ Line.propTypes = {
   isOpen: PropTypes.bool,
   index: PropTypes.number,
 };
-
-function Hamburger({ hamburgerOpen, toggleHamburger }) {
-  return (
-    <div className={Styles.hamburger} onClick={toggleHamburger}>
-      <Line isOpen={hamburgerOpen} index={1} />
-      <Line isOpen={hamburgerOpen} index={2} />
-      <Line isOpen={hamburgerOpen} index={3} />
-    </div>
-  );
-}
-
-Hamburger.propTypes = {
-  isOpen: PropTypes.bool,
-};
-
-export default Hamburger;

@@ -38,4 +38,5 @@ function MySkill({ isActive }) {
 MySkill.propTypes = {
   isActive: PropTypes.bool,
 };
+
 export default MySkill;

@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import { HashLink } from "react-router-hash-link";
+import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
+
 import styles from "./ListNav.module.css";
 
-function List({ text, index, isOpen, link }) {
+export function List({ text, index, link }) {
   const [hover, setHover] = useState(false);
+
+  const { value: isOpen } = useSelector((state) => state.hamburgerToggle);
 
   const handleMouseEnter = () => setHover(true);
   const handleMouseLeave = () => setHover(false);
@@ -44,32 +48,8 @@ function List({ text, index, isOpen, link }) {
     </>
   );
 }
-
 List.propTypes = {
   text: PropTypes.string,
   index: PropTypes.number,
-  isOpen: PropTypes.bool,
   link: PropTypes.string,
 };
-
-function ListNav({ isOpen }) {
-  return (
-    <div
-      className={`${styles["list-nav"]} ${
-        isOpen ? null : styles["list-nav-close"]
-      }`}
-    >
-      <ul>
-        <List link="#introduction" text="HOME" index={1} isOpen={isOpen} />
-        <List link="#about" text="ABOUT" index={2} isOpen={isOpen} />
-        <List text="PROJECTS" index={3} isOpen={isOpen} />
-      </ul>
-    </div>
-  );
-}
-
-ListNav.propTypes = {
-  isOpen: PropTypes.bool,
-};
-
-export default ListNav;

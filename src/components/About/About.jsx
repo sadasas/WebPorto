@@ -20,7 +20,7 @@ Picture.propTypes = {
   isActive: PropTypes.bool,
 };
 
-function CheckView(element, setActive, setOverlaped) {
+function checkView(element, setActive, setOverlaped) {
   var windowHeight = window.innerHeight;
   var elemenTop = element.current.getBoundingClientRect().top;
   var elemenVisible = 700;
@@ -38,7 +38,7 @@ function About() {
   useEffect(() => {
     window.addEventListener(
       "scroll",
-      CheckView.bind(null, aboutRef, setActive, setOverlaped)
+      checkView.bind(null, aboutRef, setActive, setOverlaped)
     );
   }, []);
 
