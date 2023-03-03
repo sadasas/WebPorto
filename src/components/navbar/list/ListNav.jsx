@@ -15,7 +15,7 @@ function ListNav() {
       <ul>
         <List link="#introduction" text="HOME" index={1} isOpen={isOpen} />
         <List link="#about" text="ABOUT" index={2} isOpen={isOpen} />
-        <List text="PROJECTS" index={3} isOpen={isOpen} />
+        <List link="#projects" text="PROJECTS" index={3} isOpen={isOpen} />
       </ul>
     </div>
   );

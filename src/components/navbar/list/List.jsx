@@ -15,10 +15,10 @@ export function List({ text, index, link }) {
 
   function calDurByIndex() {
     if (index == 1) {
-      return styles["text-list-delay-1"];
+      return 300;
     } else if (index == 2) {
-      return styles["text-list-delay-2"];
-    } else return styles["text-list-delay-3"];
+      return 400;
+    } else return 600;
   }
 
   return (
@@ -27,9 +27,10 @@ export function List({ text, index, link }) {
         <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           {hover && <h1>&rarr;</h1>}
           <h1
+            style={{ transitionDelay: calDurByIndex() + "ms" }}
             className={`${styles["text-list"]}  ${
               isOpen ? styles["text-list-open"] : styles["text-list-close"]
-            } ${calDurByIndex()}`}
+            }`}
           >
             {text}
           </h1>

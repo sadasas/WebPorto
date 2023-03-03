@@ -9,11 +9,11 @@ function Skill({ text, level, isActive, index }) {
   const { width, textLevel } = (() => {
     switch (level) {
       case 1:
-        return { width: "line-width-50", textLevel: "Beginner" };
+        return { width: "50%", textLevel: "Beginner" };
       case 2:
-        return { width: "line-width-75", textLevel: "Intermediate" };
+        return { width: "75%", textLevel: "Intermediate" };
       case 3:
-        return { width: "line-width-100", textLevel: "Master" };
+        return { width: "100%", textLevel: "Master" };
     }
   })();
 
@@ -35,8 +35,11 @@ function Skill({ text, level, isActive, index }) {
           {textLevel}
         </h2>
         <div
-          style={{ transitionDelay: delay + "ms" }}
-          className={`${styles.line} ${isActive ? styles[width] : null}`}
+          style={{
+            transitionDelay: delay + "ms",
+            width: isActive ? width : "0",
+          }}
+          className={`${styles.line} `}
         ></div>
       </div>
     </>
@@ -59,10 +62,11 @@ function MySkill({ isActive }) {
     >
       <h1>My Skill</h1>
       <Skill index={1} isActive={isActive} text="C/C++" level={1} />
-      <Skill index={2} isActive={isActive} text="Javascript" level={2} />
-      <Skill index={3} isActive={isActive} text="C#" level={2} />
-      <Skill index={4} isActive={isActive} text="React-js" level={1} />
-      <Skill index={5} isActive={isActive} text="Unity-engine" level={2} />
+      <Skill index={2} isActive={isActive} text="C#" level={2} />
+      <Skill index={3} isActive={isActive} text="Javascript" level={2} />
+      <Skill index={4} isActive={isActive} text="Typescript" level={1} />
+      <Skill index={5} isActive={isActive} text="React-js" level={1} />
+      <Skill index={6} isActive={isActive} text="Unity-engine" level={2} />
     </div>
   );
 }

@@ -60,18 +60,8 @@
   width: 0%;
   height: 3px;
   background-color: grey;
-  margin-bottom: 15px;
+  margin-top: 10px;
+  margin-bottom: 25px;
   transition: width;
   transition-duration: 3000ms;
-}
-
-.line-width-50 {
-  width: 50%;
-}
-
-.line-width-75 {
-  width: 75%;
-}
-.line-width-100 {
-  width: 100%;
 }
