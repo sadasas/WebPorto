@@ -1,5 +1,5 @@
 .line {
-  background-color: white;
+  background-color: var(--foreground-navbar);
   width: 100%;
   height: 2px;
   transition-property: transform opacity;

@@ -4,8 +4,9 @@ import styles from "./project.module.css";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-
-function Content({ title, description, tag, link, status }) {
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+function Content({ title, description, tag, link, status, images }) {
   const control = useAnimation();
   const [ref, inView] = useInView({
     rootMargin: "-400px",
@@ -93,7 +94,21 @@ function Content({ title, description, tag, link, status }) {
         initial="hidden"
         animate={control}
         className={styles.image}
-      ></motion.div>
+      >
+        <Carousel
+          showThumbs="false"
+          showStatus="false"
+          showArrows="false"
+          autoPlay="true"
+          infiniteLoop="true"
+        >
+          {images.map((src, i) => (
+            <div key={i}>
+              <img src={src} />
+            </div>
+          ))}
+        </Carousel>
+      </motion.div>
     </motion.div>
   );
 }
@@ -104,6 +119,7 @@ Content.propTypes = {
   tag: PropTypes.array,
   link: PropTypes.array,
   status: PropTypes.string,
+  images: PropTypes.array,
 };
 function Projects() {
   return (
@@ -126,9 +142,10 @@ function Projects() {
           },
         ]}
         status="work in progress"
+        images={["/webporto/1.png", "/webporto/2.png", "/webporto/3.png"]}
       />
       <Content
-        title="Balap Karung"
+        title="Balap Egrang"
         description="a racing game  based on indonesian traditional game "
         tag={["Game", "Unity", "3D", "Racing Game"]}
         link={[
@@ -139,6 +156,7 @@ function Projects() {
           },
         ]}
         status="work in progress"
+        images={["/webporto/1.png", "/webporto/2.png", "/webporto/3.png"]}
       />
       <Content
         title="Oishi For Everyone"
@@ -157,6 +175,7 @@ function Projects() {
             content: "App release",
           },
         ]}
+        images={["/webporto/1.png", "/webporto/2.png", "/webporto/3.png"]}
       />
     </section>
   );

@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import PropTypes from "prop-types";
-import { useSelector } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
+import { hamburgerToggled } from "../../../features/hamburger/hamburgerToggleSlice";
 import styles from "./ListNav.module.css";
 
 export function List({ text, index, link }) {
   const [hover, setHover] = useState(false);
-
+  const dispatch = useDispatch();
   const { value: isOpen } = useSelector((state) => state.hamburgerToggle);
 
   const handleMouseEnter = () => setHover(true);
   const handleMouseLeave = () => setHover(false);
+  const toggleHamburger = () => dispatch(hamburgerToggled({}));
 
   function calDurByIndex() {
     if (index == 1) {
@@ -24,7 +25,11 @@ export function List({ text, index, link }) {
   return (
     <>
       <HashLink to={link} className={styles["list-nav-content"]} smooth>
-        <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <li
+          onClick={toggleHamburger}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           {hover && <h1>&rarr;</h1>}
           <h1
             style={{ transitionDelay: calDurByIndex() + "ms" }}

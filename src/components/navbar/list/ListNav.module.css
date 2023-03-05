@@ -2,9 +2,11 @@
   width: 100vw;
   left: 0;
   right: 0;
+  top: 50px;
   transition-property: transform opacity;
   transition-duration: 500ms;
-  position: absolute;
+  position: fixed;
+  z-index: 10;
 }
 
 .list-nav-close {
@@ -25,6 +27,7 @@
   background-color: white;
   z-index: 10;
   border-radius: 0.75rem;
+  border: thick black solid;
 }
 
 .list-nav-content {
