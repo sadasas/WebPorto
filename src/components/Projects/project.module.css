@@ -87,7 +87,20 @@ h4 {
 }
 
 .image {
-  min-height: 800px;
+  max-height: 800px;
   padding: 20px;
-  align-content: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.images-potrait {
+  width: 300px !important;
+  height: 500px !important;
+}
+.images-landscape {
+  width: 600px !important;
+  height: 300px !important;
 }

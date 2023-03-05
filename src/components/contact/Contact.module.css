@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--foreground);
+  color: var(--background);
+  align-items: center;
+  margin-top: 100px;
+  padding: 50px;
+}
+.container h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container a {
+  text-decoration: none;
+  color: var(--background);
+  transition: all ease 800ms;
+}
+.social-media {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.social-media-item {
+  border: black solid 1px;
+  border-radius: 20px;
+  padding: 10px 20px;
+  text-align: center;
+  transition: all ease 900ms;
+}
+.social-media-item a {
+  transition: all ease 800ms;
+}
+.social-media-item:hover {
+  background-color: var(--background);
+  border: none;
+}
+.social-media-item:hover a {
+  color: var(--foreground);
+  transform: translate(120px, 50%);
+}

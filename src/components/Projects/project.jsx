@@ -6,7 +6,15 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-function Content({ title, description, tag, link, status, images }) {
+function Content({
+  title,
+  description,
+  tag,
+  link,
+  status,
+  images,
+  isLandscape,
+}) {
   const control = useAnimation();
   const [ref, inView] = useInView({
     rootMargin: "-400px",
@@ -96,15 +104,24 @@ function Content({ title, description, tag, link, status, images }) {
         className={styles.image}
       >
         <Carousel
-          showThumbs="false"
-          showStatus="false"
-          showArrows="false"
+          dynamicHeight="false"
+          width="90"
+          showThumbs={false}
+          showStatus={false}
+          showArrows={true}
           autoPlay="true"
           infiniteLoop="true"
         >
           {images.map((src, i) => (
             <div key={i}>
-              <img src={src} />
+              <img
+                className={
+                  isLandscape
+                    ? styles["images-landscape"]
+                    : styles["images-potrait"]
+                }
+                src={src}
+              />
             </div>
           ))}
         </Carousel>
@@ -120,6 +137,7 @@ Content.propTypes = {
   link: PropTypes.array,
   status: PropTypes.string,
   images: PropTypes.array,
+  isLandscape: PropTypes.bool,
 };
 function Projects() {
   return (
@@ -143,6 +161,7 @@ function Projects() {
         ]}
         status="work in progress"
         images={["/webporto/1.png", "/webporto/2.png", "/webporto/3.png"]}
+        isLandscape={true}
       />
       <Content
         title="Balap Egrang"
@@ -157,6 +176,7 @@ function Projects() {
         ]}
         status="work in progress"
         images={["/webporto/1.png", "/webporto/2.png", "/webporto/3.png"]}
+        isLandscape={true}
       />
       <Content
         title="Oishi For Everyone"
@@ -175,7 +195,8 @@ function Projects() {
             content: "App release",
           },
         ]}
-        images={["/webporto/1.png", "/webporto/2.png", "/webporto/3.png"]}
+        images={["oishi/1.png", "/oishi/2.png", "/oishi/3.png", "/oishi/4.png"]}
+        isLandscape={false}
       />
     </section>
   );

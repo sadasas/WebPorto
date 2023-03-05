@@ -16,6 +16,7 @@ function ListNav() {
         <List link="#introduction" text="HOME" index={1} />
         <List link="#about" text="ABOUT" index={2} />
         <List link="#projects" text="PROJECTS" index={3} />
+        <List link="#contact" text="CONTACT" index={4} />
       </ul>
     </div>
   );
