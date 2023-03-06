@@ -45,7 +45,7 @@ function Projects() {
         title="Oishi For Everyone"
         description="play be a successful fried chicken restaurant entrepreneur"
         status="alpha "
-        tag={["Game", "Unity", "2D Game", "Simulator"]}
+        tag={["Game", "Unity", "2D", "Simulator"]}
         link={[
           {
             img: "/github.png",

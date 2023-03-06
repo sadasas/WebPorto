@@ -1,6 +1,7 @@
 .mySkill {
   display: flex;
   flex: 1;
+  gap: 10px;
   flex-direction: column;
   align-items: end;
   transition: width opacity;
@@ -15,16 +16,18 @@
 
 .mySkill h2 {
   margin-bottom: 50px;
+}
+.mySkill h2,
+h4,
+h5 {
   font-weight: 100;
   line-height: 2rem;
 }
-
 .mySkill h4,
 h5 {
   margin: 0;
 }
 .skill {
-  cursor: not-allowed;
   display: flex;
   width: 0;
   opacity: 0;
@@ -32,13 +35,28 @@ h5 {
   justify-content: space-between;
   flex-direction: row-reverse;
   flex-wrap: wrap;
+  transition: opacity;
 }
 
 .skill-active {
   width: 70%;
+  height: 55px;
   opacity: 100%;
 }
 
+.skill:hover {
+  background-color: var(--foreground);
+  border-radius: 20px 0;
+  color: var(--background);
+  justify-content: center;
+  align-items: center;
+  transition-duration: 300ms;
+  gap: 10px;
+}
+
+.skill:hover * {
+  flex: 0;
+}
 .skill-title {
   width: 50%;
   text-align: end;
@@ -58,9 +76,7 @@ h5 {
 .line {
   width: 0%;
   height: 3px;
-  background-color: grey;
-  margin-top: 10px;
-  margin-bottom: 25px;
+  background-color: white;
   transition: width;
   transition-duration: 3000ms;
 }

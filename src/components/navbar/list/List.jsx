@@ -15,11 +15,7 @@ export function List({ text, index, link }) {
   const toggleHamburger = () => dispatch(hamburgerToggled({}));
 
   function calDurByIndex() {
-    if (index == 1) {
-      return 300;
-    } else if (index == 2) {
-      return 400;
-    } else return 600;
+    return 200 + 100 * index;
   }
 
   return (

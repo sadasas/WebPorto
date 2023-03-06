@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./MySkill.module.css";
 import PropTypes from "prop-types";
 
 function Skill({ text, level, isActive, index }) {
+  const [isHover, setIsHover] = useState(false);
+
+  const hoverHandler = (isHovering) => {
+    setIsHover(isHovering);
+  };
   const delay = (() => {
     return (index - 1) * 3000;
   })();
@@ -16,10 +21,12 @@ function Skill({ text, level, isActive, index }) {
         return { width: "100%", textLevel: "Master" };
     }
   })();
-
+  console.log(isHover);
   return (
     <>
       <div
+        onMouseEnter={hoverHandler.bind(null, true)}
+        onMouseLeave={hoverHandler.bind(null, false)}
         style={{ transitionDelay: delay + "ms" }}
         className={`${styles.skill} ${
           isActive ? styles["skill-active"] : null
@@ -34,13 +41,15 @@ function Skill({ text, level, isActive, index }) {
         >
           {textLevel}
         </h5>
-        <div
-          style={{
-            transitionDelay: delay + "ms",
-            width: isActive ? width : "0",
-          }}
-          className={`${styles.line} `}
-        ></div>
+        {!isHover && (
+          <div
+            style={{
+              transitionDelay: delay + "ms",
+              width: isActive ? width : "0",
+            }}
+            className={`${styles.line} `}
+          ></div>
+        )}
       </div>
     </>
   );
@@ -65,8 +74,8 @@ function MySkill({ isActive }) {
       <Skill index={2} isActive={isActive} text="C#" level={2} />
       <Skill index={3} isActive={isActive} text="Javascript" level={2} />
       <Skill index={4} isActive={isActive} text="Typescript" level={1} />
-      <Skill index={5} isActive={isActive} text="React-js" level={2} />
-      <Skill index={6} isActive={isActive} text="Unity-engine" level={2} />
+      <Skill index={5} isActive={isActive} text="React" level={2} />
+      <Skill index={6} isActive={isActive} text="Unity" level={2} />
     </div>
   );
 }

@@ -24,10 +24,10 @@ export function Content({
   const containerVariant = {
     visible: {
       width: "90vw",
-
+      opacity: 1,
       transition: { duration: 0.5 },
     },
-    hidden: { width: "100vw" },
+    hidden: { width: "0", opacity: 0 },
   };
 
   const descriptionVariant = {
@@ -83,11 +83,11 @@ export function Content({
           <div className={styles["content-description-tag"]}>
             {tag &&
               tag.length > 0 &&
-              tag.map((item, i) => <h4 key={i}>{item}</h4>)}
+              tag.map((item, i) => <h5 key={i}>{item}</h5>)}
           </div>
-          <h4 className={styles["content-description-status"]}>
+          <h5 className={styles["content-description-status"]}>
             status : {status}
-          </h4>
+          </h5>
         </div>
         <div>
           <h3>{description}</h3>
