@@ -30,7 +30,7 @@ export function List({ text, index, link }) {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          {hover && <h1>&rarr;</h1>}
+          {hover && <h3>&rarr;</h3>}
           <h1
             style={{ transitionDelay: calDurByIndex() + "ms" }}
             className={`${styles["text-list"]}  ${

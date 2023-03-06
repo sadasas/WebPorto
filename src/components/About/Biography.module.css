@@ -16,12 +16,11 @@
   transform: translateX(-100px);
 }
 
-.biography h1 {
-  font-size: 2rem;
-}
-
 .biography h2 {
-  font-size: 1.5rem;
+  margin-bottom: 50px;
+}
+.biography h2,
+h4 {
   font-weight: 100;
   line-height: 2rem;
 }

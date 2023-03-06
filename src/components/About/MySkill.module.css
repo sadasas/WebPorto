@@ -13,17 +13,16 @@
   opacity: 0;
 }
 
-.skill h1 {
-  font-size: 2rem;
-  justify-self: end;
-}
-
-.skill h2 {
-  font-size: 1.5rem;
+.mySkill h2 {
+  margin-bottom: 50px;
   font-weight: 100;
   line-height: 2rem;
 }
 
+.mySkill h4,
+h5 {
+  margin: 0;
+}
 .skill {
   cursor: not-allowed;
   display: flex;

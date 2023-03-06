@@ -9,14 +9,14 @@ function Biography({ isActive }) {
         isActive ? null : styles["biography-inactive"]
       }`}
     >
-      <h1>Biography</h1>
-      <h2>
+      <h2>Biography</h2>
+      <h4>
         {" "}
         Hi! i'm Wahyu. Being a fresher, I think I am very flexible and adaptive
         to learning new things. Computer science has always been my favorite
         subject, currently studying game programming and in my free time
         studying front-end web development{" "}
-      </h2>
+      </h4>
     </div>
   );
 }

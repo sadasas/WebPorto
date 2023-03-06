@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import styles from "./About.module.css";
 import picture from "../../assets/profile.JPG";
 import Biography from "./Biography";
@@ -12,7 +13,11 @@ function Picture({ isActive }) {
         isActive ? null : styles["photo-inactive"]
       }`}
     >
-      <img src={picture} className={styles["photo-content"]}></img>
+      <LazyLoadImage
+        placeholderSrc="/placeholder/200x400.png"
+        src={picture}
+        className={styles["photo-content"]}
+      ></LazyLoadImage>
     </div>
   );
 }
