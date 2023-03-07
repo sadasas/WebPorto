@@ -9,7 +9,7 @@ const text = [
   "a",
   "tech enthusiast",
   "game programmer",
-  "front-end web developer",
+  "react developer",
 ];
 
 function Introduction() {

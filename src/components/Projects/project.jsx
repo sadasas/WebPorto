@@ -8,8 +8,8 @@ function Projects() {
     <section id="projects" className={styles.projects}>
       <h1>Projects</h1>
       <Content
-        title="My Web Portofolio"
-        description="my personal web portofolio "
+        title="Web Portofolio"
+        description="My personal web portofolio "
         tag={["web", "react"]}
         link={[
           {
@@ -29,7 +29,7 @@ function Projects() {
       />
       <Content
         title="Balap Egrang"
-        description="a racing game  based on indonesian traditional game "
+        description="A racing game  based on indonesian traditional game "
         tag={["Game", "Unity", "3D", "Racing Game"]}
         link={[
           {
@@ -43,7 +43,7 @@ function Projects() {
       />
       <Content
         title="Oishi For Everyone"
-        description="play be a successful fried chicken restaurant entrepreneur"
+        description="Play be a successful fried chicken restaurant entrepreneur"
         status="alpha "
         tag={["Game", "Unity", "2D", "Simulator"]}
         link={[

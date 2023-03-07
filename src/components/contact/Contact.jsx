@@ -35,6 +35,10 @@ function Contact() {
         />
         <Media text="twitter" link="https://twitter.com/wwww80086302" />
       </div>
+      <div className={styles.copyright}>
+        <h5>WSRP | This website is under construction</h5>
+        <h5>©2023 - All Rights Reserved</h5>
+      </div>
     </section>
   );
 }
