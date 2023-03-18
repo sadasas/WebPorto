@@ -28,6 +28,26 @@ function Projects() {
         isLandscape={true}
       />
       <Content
+        title="TODO App"
+        description="Todo app integrated with mongoDB for better life "
+        tag={["web", "react", "mongoDB"]}
+        link={[
+          {
+            img: "/github.png",
+            href: "https://github.com/sadasas/todo-list/",
+            content: "Source Code",
+          },
+          {
+            img: "/web.png",
+            href: "https://todo-list-sadasas.vercel.app/",
+            content: "Web",
+          },
+        ]}
+        status="work in progress"
+        images={["/todo/1.png", "/todo/2.png"]}
+        isLandscape={true}
+      />
+      <Content
         title="Balap Egrang"
         description="A racing game  based on indonesian traditional game "
         tag={["Game", "Unity", "3D", "Racing Game"]}

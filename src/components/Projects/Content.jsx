@@ -95,7 +95,13 @@ export function Content({
             {link &&
               link.length > 0 &&
               link.map(({ img, href, content }, i) => (
-                <a title={content} href={href} key={i}>
+                <a
+                  title={content}
+                  href={href}
+                  key={i}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img alt={content} src={img}></img>
                 </a>
               ))}
