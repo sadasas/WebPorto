@@ -42,11 +42,16 @@
   flex-direction: row;
   gap: 20px;
 }
+
 .content-description-link img {
   width: 50px;
   height: 50px;
 
   border-radius: 10px;
+}
+
+.content-description-link img:hover {
+  background-color: gray;
 }
 .content-caraousel {
   padding: 20px;

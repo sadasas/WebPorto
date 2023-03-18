@@ -21,7 +21,7 @@ function Skill({ text, level, isActive, index }) {
         return { width: "100%", textLevel: "Master" };
     }
   })();
-  console.log(isHover);
+
   return (
     <>
       <div
