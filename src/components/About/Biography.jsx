@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import styles from "./Biography.module.css";
 import TypedText from "../introduction/TypedText";
 
+const job = ["GAME PROGAMMER", "REACT DEVELOPER"];
 function Biography({ isActive }) {
-  const job = ["GAME PROGAMMER", "REACT DEVELOPER"];
   return (
     <div
       className={`${styles.biography} ${
