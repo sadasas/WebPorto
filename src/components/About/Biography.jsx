@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./Biography.module.css";
-import TypedText from "../introduction/TypedText";
+import TypedText from "./TypedText";
 
 const job = ["GAME PROGAMMER", "REACT DEVELOPER"];
 function Biography({ isActive }) {
