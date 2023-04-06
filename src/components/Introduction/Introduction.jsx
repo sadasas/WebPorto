@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Introduction.module.css";
-import TypedText from "./TypedText";
 
 const text = [
   "hi",
@@ -13,11 +12,7 @@ const text = [
 ];
 
 function Introduction() {
-  return (
-    <section id="introduction" className={styles.introduction}>
-      <TypedText text={text} delay={100} />
-    </section>
-  );
+  return <section id="introduction" className={styles.introduction}></section>;
 }
 
 export default Introduction;
