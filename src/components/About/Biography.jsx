@@ -1,22 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./Biography.module.css";
+import TypedText from "../introduction/TypedText";
 
 function Biography({ isActive }) {
+  const job = ["GAME PROGAMMER", "REACT DEVELOPER"];
   return (
     <div
       className={`${styles.biography} ${
         isActive ? null : styles["biography-inactive"]
       }`}
     >
-      <h2>Biography</h2>
-      <h4>
+      <h3>Hello. I'M WAHYU SETIO RILO PAMBUDI</h3>
+
+      <TypedText text={job} delay={100} />
+
+      <h3 className={styles.description}>
         {" "}
-        Hi! i'm Wahyu. Being a fresher, I think I am very flexible and adaptive
-        to learning new things. Computer science has always been my favorite
-        subject, currently studying game programming and in my free time
-        studying web development{" "}
-      </h4>
+        A freelancer who provides services for game development and web
+        development, for all businesses with more than 1 years of experience{" "}
+      </h3>
     </div>
   );
 }

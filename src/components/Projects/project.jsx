@@ -7,44 +7,25 @@ function Projects() {
   return (
     <section id="projects" className={styles.projects}>
       <h1>Projects</h1>
+
       <Content
-        title="Web Portofolio"
-        description="My personal web portofolio "
-        tag={["web", "react"]}
+        title="TCL App"
+        description="Ecommerce with simplicity and clean design "
+        tag={["web", "react", "redux"]}
         link={[
           {
             img: "/github.png",
-            href: "https://github.com/sadasas/WebPorto",
+            href: "https://github.com/sadasas/TCL/",
             content: "Source Code",
           },
           {
             img: "/web.png",
-            href: "https://web-porto-eight.vercel.app/",
-            content: "Web",
+            href: "https://tcl-eight.vercel.app/",
+            content: "Live Demo",
           },
         ]}
         status="work in progress"
-        images={["/webporto/1.png", "/webporto/2.png", "/webporto/3.png"]}
-        isLandscape={true}
-      />
-      <Content
-        title="TODO App"
-        description="Todo app integrated with mongoDB for better life "
-        tag={["web", "react", "mongoDB"]}
-        link={[
-          {
-            img: "/github.png",
-            href: "https://github.com/sadasas/todo-list/",
-            content: "Source Code",
-          },
-          {
-            img: "/web.png",
-            href: "https://todo-list-sadasas.vercel.app/",
-            content: "Web",
-          },
-        ]}
-        status="work in progress"
-        images={["/todo/1.png", "/todo/2.png"]}
+        images={["/TCL/1.png", "/TCL/2.png", "/TCL/3.png"]}
         isLandscape={true}
       />
       <Content
@@ -75,7 +56,7 @@ function Projects() {
           {
             img: "/itchio.png",
             href: "https://wahyusrp.itch.io/oishiforeveryone",
-            content: "App release",
+            content: "App",
           },
         ]}
         images={["oishi/1.png", "/oishi/2.png", "/oishi/3.png", "/oishi/4.png"]}

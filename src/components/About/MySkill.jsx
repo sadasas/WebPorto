@@ -2,80 +2,82 @@ import React, { useState } from "react";
 import styles from "./MySkill.module.css";
 import PropTypes from "prop-types";
 
-function Skill({ text, level, isActive, index }) {
-  const [isHover, setIsHover] = useState(false);
-
-  const hoverHandler = (isHovering) => {
-    setIsHover(isHovering);
-  };
-  const delay = (() => {
-    return (index - 1) * 3000;
-  })();
-  const { width, textLevel } = (() => {
-    switch (level) {
-      case 1:
-        return { width: "50%", textLevel: "Beginner" };
-      case 2:
-        return { width: "75%", textLevel: "Intermediate" };
-      case 3:
-        return { width: "100%", textLevel: "Master" };
-    }
-  })();
-
+function Skill({ text, logo, level }) {
   return (
-    <>
-      <div
-        onMouseEnter={hoverHandler.bind(null, true)}
-        onMouseLeave={hoverHandler.bind(null, false)}
-        style={{ transitionDelay: delay + "ms" }}
-        className={`${styles.skill} ${
-          isActive ? styles["skill-active"] : null
-        }`}
-      >
-        <h4 className={`${styles["skill-title"]}`}>{text}</h4>
-        <h5
-          style={{ transitionDelay: delay + 3000 + "ms" }}
-          className={`${styles["skill-level"]} ${
-            isActive ? styles["skill-level-active"] : null
-          }`}
-        >
-          {textLevel}
-        </h5>
-        {!isHover && (
-          <div
-            style={{
-              transitionDelay: delay + "ms",
-              width: isActive ? width : "0",
-            }}
-            className={`${styles.line} `}
-          ></div>
-        )}
-      </div>
-    </>
+    <div data--skill={text + " | " + level} className={styles.skill}>
+      <img src={logo}></img>
+    </div>
   );
 }
-
 Skill.propTypes = {
   text: PropTypes.string,
-  level: PropTypes.number,
-  index: PropTypes.number,
+  level: PropTypes.string,
+  logo: PropTypes.string,
   isActive: PropTypes.bool,
 };
 
 function MySkill({ isActive }) {
   return (
-    <div
-      className={`${styles.mySkill} ${
-        isActive ? null : styles["mySkill-inactive"]
-      }`}
-    >
-      <h2>My Skill</h2>
-      <Skill index={1} isActive={isActive} text="C/C++" level={1} />
-      <Skill index={2} isActive={isActive} text="C#" level={2} />
-      <Skill index={3} isActive={isActive} text="Javascript" level={2} />
-      <Skill index={4} isActive={isActive} text="Typescript" level={1} />
-      <Skill index={5} isActive={isActive} text="React" level={2} />
-      <Skill index={6} isActive={isActive} text="Unity" level={2} />
+    <div className={`${styles.mySkill} `}>
+      <h2>Tech Stack</h2>
+      <div className={styles["mySkill-grid"]}>
+        <Skill
+          index={1}
+          isActive={isActive}
+          text="C/C++"
+          logo="/skill/cpp.png"
+          level="Beginner"
+        />
+        <Skill
+          index={2}
+          isActive={isActive}
+          text="C#"
+          logo="/skill/csharp.svg"
+          level="Intermediate"
+        />
+        <Skill
+          logo="/skill/js.png"
+          index={3}
+          isActive={isActive}
+          text="Javascript"
+          level="Intermediate"
+        />
+        <Skill
+          index={4}
+          isActive={isActive}
+          text="Typescript"
+          logo="/skill/ts.png"
+          level="Beginner"
+        />
+        <Skill
+          logo="/skill/react.png"
+          index={5}
+          isActive={isActive}
+          text="React"
+          level="Intermediate"
+        />
+        <Skill
+          index={6}
+          isActive={isActive}
+          text="Unity"
+          logo="/skill/unity.png"
+          level="Intermediate"
+        />
+        <Skill
+          index={7}
+          isActive={isActive}
+          text="MongoDB"
+          logo="/skill/MongoDB.png"
+          level="Intermediate"
+        />
+        <Skill
+          index={8}
+          isActive={isActive}
+          text="Tailwindcss"
+          logo="/skill/Tailwind.svg"
+          level="Intermediate"
+        />
+      </div>
     </div>
   );
 }

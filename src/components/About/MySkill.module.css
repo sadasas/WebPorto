@@ -1,22 +1,19 @@
 .mySkill {
   display: flex;
-  flex: 1;
-  gap: 10px;
   flex-direction: column;
-  align-items: end;
-  transition: width opacity;
-  transition-duration: 300ms;
-  transition-delay: 500ms;
+  gap: 75px;
+  justify-content: center;
+  align-items: center;
 }
 
-.mySkill-inactive {
-  width: 0;
-  opacity: 0;
+.mySkill-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 4rem));
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
-.mySkill h2 {
-  margin-bottom: 50px;
-}
 .mySkill h2,
 h4,
 h5 {
@@ -27,56 +24,85 @@ h5 {
 h5 {
   margin: 0;
 }
-.skill {
-  display: flex;
-  width: 0;
-  opacity: 0;
-  overflow: hidden;
-  justify-content: space-between;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  transition: opacity;
-}
 
-.skill-active {
-  width: 70%;
-  height: 55px;
-  opacity: 100%;
+.skill {
+  overflow: hidden;
+  object-fit: contain;
 }
 
 .skill:hover {
+  cursor: pointer;
+}
+
+.skill::before {
+  position: absolute;
+  text-align: center;
+  content: "";
+  width: 0px;
+  height: 20px;
+  color: var(--foreground);
   background-color: var(--foreground);
-  border-radius: 20px 0;
+  transition: none;
+  font-size: 0;
+}
+
+.skill:hover::before {
+  content: attr(data--skill);
+  width: 170px;
+  transition: width 0.4s ease-out, color 200ms 400ms, font-size 5ms 400ms;
+  padding: 5px 10px;
+  border-radius: 10px 10px 10px 0px;
   color: var(--background);
-  justify-content: center;
-  align-items: center;
-  transition-duration: 300ms;
-  gap: 10px;
+  font-size: 1rem;
+  transform: translateX(-100px);
+  transform: translateY(-40px);
 }
 
-.skill:hover * {
-  flex: 0;
-}
-.skill-title {
-  width: 50%;
-  text-align: end;
+.skill img {
+  width: 50px;
+  height: 50px;
 }
 
-.skill-level {
-  opacity: 0;
-  width: 50%;
-  transition: opacity;
-  transition-duration: 300ms;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .mySkill {
+    gap: 25px;
+  }
+  .mySkill-grid {
+    grid-template-columns: repeat(3, minmax(0, 5rem));
+  }
 }
 
-.skill-level-active {
-  opacity: 100;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 768px) and (min-width: 600px) {
+  .mySkill {
+    gap: 50px;
+  }
+  .mySkill-grid {
+    grid-template-columns: repeat(6, minmax(0, 6rem));
+  }
+  .skill:hover::before {
+    font-size: 1.3rem;
+  }
 }
 
-.line {
-  width: 0%;
-  height: 3px;
-  background-color: white;
-  transition: width;
-  transition-duration: 3000ms;
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .mySkill {
+    gap: 50px;
+  }
+  .mySkill-grid {
+    grid-template-columns: repeat(6, minmax(0, 8rem));
+  }
+  .skill:hover::before {
+    font-size: 1.3rem;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

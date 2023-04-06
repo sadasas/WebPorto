@@ -3,7 +3,7 @@ import { HashLink } from "react-router-hash-link";
 import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 import { hamburgerToggled } from "../../../features/hamburger/hamburgerToggleSlice";
-import styles from "./ListNav.module.css";
+import styles from "./ListNavHamburger.module.css";
 
 export function List({ text, index, link }) {
   const [hover, setHover] = useState(false);

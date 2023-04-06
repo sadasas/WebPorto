@@ -18,12 +18,12 @@ export function Content({
 }) {
   const control = useAnimation();
   const [ref, inView] = useInView({
-    rootMargin: "-400px",
+    threshold: 0.8,
   });
 
   const containerVariant = {
     visible: {
-      width: "90vw",
+      width: "1200px",
       opacity: 1,
       transition: { duration: 0.5 },
     },
@@ -42,7 +42,7 @@ export function Content({
     visible: {
       "border-radius": "0 20px 20px 0",
       border: "solid white 1px",
-      opacity: 100,
+      opacity: 1,
       transition: { duration: 0.9 },
     },
     hidden: {
@@ -57,8 +57,6 @@ export function Content({
   useEffect(() => {
     if (inView) {
       control.start("visible");
-    } else {
-      control.start("hidden");
     }
   }, [control, inView]);
 
@@ -95,15 +93,20 @@ export function Content({
             {link &&
               link.length > 0 &&
               link.map(({ img, href, content }, i) => (
-                <a
-                  title={content}
-                  href={href}
+                <div
+                  className={styles["content-description-link-container"]}
                   key={i}
-                  target="_blank"
-                  rel="noreferrer"
                 >
-                  <img alt={content} src={img}></img>
-                </a>
+                  <a
+                    title={content}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img alt={content} src={img}></img>
+                  </a>
+                  <p>{content}</p>
+                </div>
               ))}
           </div>
         </div>

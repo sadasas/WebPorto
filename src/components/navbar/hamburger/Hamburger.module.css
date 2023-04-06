@@ -21,16 +21,138 @@
 }
 
 .hamburger {
-  width: 40px;
-  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  transition: opacity 500ms 1s;
+  opacity: 0;
+  pointer-events: none;
+  gap: 10px;
+  overflow: hidden;
+  border: solid var(--foreground-navbar) 1px;
+  border-radius: 25px;
+}
+
+.hamburger:hover {
+  background-color: gray;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.hamburger-active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.title {
+  width: 0;
+  opacity: 0;
+  transition: all;
+  transform: translateX(50px);
+  transition-duration: 250ms;
+  transition-delay: 0s;
+  animation-duration: 250ms;
+}
+
+.title-active {
+  transition-duration: 250ms;
+  transition-delay: 1s;
+  width: 50px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.title-hover {
+  animation-name: titleslidein;
+  animation-direction: alternate;
+  animation-iteration-count: 2;
+}
+
+.title-unhover {
+  animation-name: titleslideout;
+  animation-direction: alternate;
+  animation-iteration-count: 2;
+}
+
+.lines {
+  height: 30px;
   display: flex;
   padding: 5px 5px;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+
+  width: 40px;
 }
 
-.hamburger:hover {
-  background-color: gray;
-  border-radius: 100% 100%;
+@keyframes titleslidein {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(40px);
+  }
+}
+
+@keyframes titleslideout {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-40px);
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .hamburger {
+    opacity: 1;
+    pointer-events: all;
+    border: none;
+    z-index: 20;
+  }
+  .line-1-onClick,
+  .line-2-onClick,
+  .line-3-onClick {
+    background-color: var(--background-navbar);
+  }
+  .title {
+    display: none;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 768px) and (min-width: 600px) {
+  .hamburger {
+    opacity: 1;
+    pointer-events: all;
+    border: none;
+    z-index: 20;
+  }
+  .line-1-onClick,
+  .line-2-onClick,
+  .line-3-onClick {
+    background-color: var(--foreground-navbar);
+  }
+  .title {
+    display: none;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .example {
+    background: blue;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

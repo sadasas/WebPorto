@@ -14,7 +14,7 @@ function TypedText({ text, delay }) {
       else setRevealedWords(0);
     }
     if (revealedChars == text[revealedWords].length) {
-      setTimeout(() => nextWord(), 900);
+      setTimeout(() => nextWord(), 1400);
     }
     return () => clearInterval(interval);
   }, [revealedChars]);

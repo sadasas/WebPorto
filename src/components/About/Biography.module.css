@@ -1,6 +1,7 @@
 .biography {
   display: flex;
   flex: 1;
+
   flex-direction: column;
   justify-content: start;
   align-items: start;
@@ -9,18 +10,47 @@
   transition-delay: 500ms;
 }
 
+.biography * {
+  line-height: 3rem;
+  font-weight: 100;
+}
+
 .biography-inactive {
   width: 0;
   opacity: 0;
-
-  transform: translateX(-100px);
+  transform: translateX(100px);
 }
 
-.biography h2 {
-  margin-bottom: 50px;
+.biography h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  font-weight: 1000 !important;
 }
-.biography h2,
-h4 {
-  font-weight: 100;
-  line-height: 2rem;
+.biography .description {
+  line-height: 1.5rem;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .biography {
+    margin-left: 0px !important;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 768px) {
+  .biography {
+    margin-left: 0px !important;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  .biography {
+    margin-left: 30px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

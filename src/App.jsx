@@ -19,9 +19,6 @@ function App() {
           <Navbar />
         </Suspense>
         <Suspense fallback={<div>loading ....</div>}>
-          <Introduction />
-        </Suspense>
-        <Suspense fallback={<div>loading ....</div>}>
           <About />
         </Suspense>
         <Suspense fallback={<div>loading ....</div>}>

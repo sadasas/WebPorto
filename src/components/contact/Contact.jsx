@@ -23,9 +23,9 @@ function Contact() {
       <h1>
         INTERESTED IN <br /> WORKING TOGETHER?
       </h1>
-      <h5>Drop me an email:</h5>
+      <h4>Drop me an email:</h4>
       <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJfqbtvdFhdmDWQhCGXZKzxXfVrNCTJxGKfcqZVhJjspBzncfdRrrTDkPstHBVSWFxLqfgV">
-        <h4>setio101199@gmail.com</h4>
+        <h3>setio101199@gmail.com</h3>
       </a>
       <div className={styles["social-media"]}>
         <Media text="instagram" link="https://www.instagram.com/wahyu_srp/" />

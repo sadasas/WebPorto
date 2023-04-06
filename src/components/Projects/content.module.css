@@ -1,7 +1,7 @@
 .content {
   display: flex;
-  flex-direction: row;
-  height: 800px;
+
+  height: 500px;
   transition: all;
 }
 .content > * {
@@ -42,10 +42,16 @@
   flex-direction: row;
   gap: 20px;
 }
+.content-description-link-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
 
 .content-description-link img {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
 
   border-radius: 10px;
 }
@@ -69,4 +75,96 @@
 .content-caraousel-images-landscape {
   width: 600px !important;
   height: 300px !important;
+  object-fit: contain;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .content {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 90vw !important;
+    height: 500px;
+
+    transform: translate(0) !important;
+  }
+  .content-caraousel {
+    border-radius: 20px 20px 0 0 !important;
+    border: "solid white 1px" !important;
+    width: 90vw !important;
+    height: 200px;
+  }
+  .content-caraousel-images-potrait {
+    height: 200px !important;
+    width: 150px !important;
+  }
+  .content-caraousel-images-landscape {
+    width: 300px !important;
+  }
+
+  .content-description {
+    border-radius: 0 0 20px 20px;
+    align-items: center;
+
+    height: 200px;
+    text-align: center;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 768px) and (min-width: 600px) {
+  .content {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 80vw !important;
+    height: 700px;
+
+    transform: translate(0) !important;
+  }
+  .content-caraousel {
+    border-radius: 20px 20px 0 0 !important;
+    border: "solid white 1px" !important;
+    width: 80vw !important;
+    height: 200px;
+  }
+  .content-caraousel-images-potrait {
+    height: 300px !important;
+    width: 180px !important;
+  }
+  .content-caraousel-images-landscape {
+    width: 400px !important;
+  }
+
+  .content-description h2 {
+    font-size: 2.5rem;
+  }
+  .content-description h5 {
+    font-size: 1rem;
+  }
+  .content-description h3 {
+    font-size: 1.5rem;
+  }
+  .content-description {
+    border-radius: 0 0 20px 20px;
+    align-items: center;
+
+    height: 200px;
+    text-align: center;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  .content {
+    width: 80vw !important;
+
+    transform: translate(0) !important;
+  }
+  .content-caraousel-images-potrait {
+    height: 400px !important;
+    width: 250px !important;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }
