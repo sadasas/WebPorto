@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styles from "./Contact.module.css";
+import pointerHandler from "../PointerHandler";
 
 function Media({ text, link }) {
   return (
@@ -18,8 +19,18 @@ Media.propTypes = {
 };
 
 function Contact() {
+  const [isHover, setIsHover] = useState(false);
+  useEffect(() => {
+    pointerHandler(isHover);
+  }, [isHover]);
+
   return (
-    <section id="contact" className={styles.container}>
+    <section
+      id="contact"
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
+      className={styles.container}
+    >
       <h1>
         INTERESTED IN <br /> WORKING TOGETHER?
       </h1>

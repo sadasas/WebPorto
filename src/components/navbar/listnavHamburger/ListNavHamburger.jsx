@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import styles from "./ListNavHamburger.module.css";
 import { List } from "./List";
+import pointerHandler from "../../PointerHandler";
 
 function ListNavHamburger() {
+  const [isHover, SetIsHover] = useState(false);
   const { value: isOpen } = useSelector((state) => state.hamburgerToggle);
+
+  useEffect(() => {
+    pointerHandler(isHover);
+  }, [isHover]);
+
   return (
     <div
+      onMouseEnter={() => SetIsHover(true)}
+      onMouseLeave={() => SetIsHover(false)}
       className={`${styles["list-nav"]} ${
         isOpen ? null : styles["list-nav-close"]
       }`}

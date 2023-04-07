@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./content.module.css";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import PropTypes from "prop-types";
+import pointerHandler from "../PointerHandler";
 
 export function Content({
   title,
@@ -16,6 +17,8 @@ export function Content({
   images,
   isLandscape,
 }) {
+  const [IsHoverDes, setIsHoverDes] = useState(false);
+
   const control = useAnimation();
   const [ref, inView] = useInView({
     threshold: 0.8,
@@ -60,6 +63,9 @@ export function Content({
     }
   }, [control, inView]);
 
+  useEffect(() => {
+    pointerHandler(IsHoverDes);
+  }, [IsHoverDes]);
   return (
     <motion.div
       ref={ref}
@@ -69,6 +75,8 @@ export function Content({
       className={styles.content}
     >
       <motion.div
+        onMouseEnter={() => setIsHoverDes(true)}
+        onMouseLeave={() => setIsHoverDes(false)}
         ref={ref}
         variants={descriptionVariant}
         initial="hidden"

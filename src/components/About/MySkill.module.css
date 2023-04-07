@@ -48,7 +48,7 @@ h5 {
 
 .skill:hover::before {
   content: attr(data--skill);
-  width: 170px;
+  width: 180px;
   transition: width 0.4s ease-out, color 200ms 400ms, font-size 5ms 400ms;
   padding: 5px 10px;
   border-radius: 10px 10px 10px 0px;

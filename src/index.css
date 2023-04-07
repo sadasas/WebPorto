@@ -9,6 +9,7 @@ body {
   --background: black;
   --background-navbar: black;
   --foreground-navbar: white;
+  --cursor-color: white;
   text-size-adjust: 100%;
 }
 
