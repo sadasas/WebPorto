@@ -5,7 +5,7 @@ import styles from "./About.module.css";
 import picture from "../../assets/profile.png";
 import Biography from "./Biography";
 import MySkill from "./MySkill";
-import pointerHandler from "../PointerHandler";
+import pointerHandler from "../pointerHandler";
 
 function Picture({ isActive }) {
   const [isHover, setIsHover] = useState(false);

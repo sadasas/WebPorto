@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import styles from "./ListNavHamburger.module.css";
 import { List } from "./List";
-import pointerHandler from "../../PointerHandler";
+import pointerHandler from "../../pointerHandler";
 
 function ListNavHamburger() {
   const [isHover, SetIsHover] = useState(false);

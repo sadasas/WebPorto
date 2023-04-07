@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styles from "./Contact.module.css";
-import pointerHandler from "../PointerHandler";
+import pointerHandler from "../pointerHandler";
 
 function Media({ text, link }) {
   return (

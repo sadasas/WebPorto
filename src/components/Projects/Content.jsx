@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import PropTypes from "prop-types";
-import pointerHandler from "../PointerHandler";
+import pointerHandler from "../pointerHandler";
 
 export function Content({
   title,
