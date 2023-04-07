@@ -3,13 +3,10 @@ import { BrowserRouter } from "react-router-dom";
 import AnimatedCursor from "react-animated-cursor";
 const About = React.lazy(() => import("./components/About/About"));
 const Contact = React.lazy(() => import("./components/contact/Contact"));
-const Introduction = React.lazy(() =>
-  import("./components/Introduction/Introduction")
-);
 const Navbar = React.lazy(() => import("./components/navbar/Navbar"));
 const Projects = React.lazy(() => import("./components/Projects/project"));
 
-import "./index.css";
+import "./index.scss";
 
 function App() {
   return (

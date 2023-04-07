@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Hamburger from "./hamburger/Hamburger";
 import { HashLink } from "react-router-hash-link";
-import styles from "./Navbar.module.css";
+import styles from "./Navbar.module.scss";
 import { hamburgerToggled } from "../../features/hamburger/hamburgerToggleSlice";
 import ListNavHamburger from "./listnavHamburger/ListNavHamburger";
 import PropTypes from "prop-types";

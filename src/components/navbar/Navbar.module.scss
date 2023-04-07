@@ -1,7 +1,9 @@
+@use "../../variables" as *;
+
 .navbar {
   z-index: 10;
-  color: var(--foreground-navbar);
-  background-color: var(--background-navbar);
+  color: $foreground-navbar;
+  background-color: $background-navbar;
   border: 0 0 0 1px;
   border: black solid;
 }
@@ -36,7 +38,22 @@
 .list {
   font-size: 1.5rem;
   text-decoration: none;
-  color: var(--foreground-navbar);
+  color: $foreground-navbar;
+
+  &::before {
+    text-align: end;
+    position: absolute;
+    content: "";
+    margin-top: 30px;
+    width: 0px;
+    height: 3px;
+    opacity: 0.7;
+    background-color: $foreground-navbar;
+    transition: width 0.4s ease-out;
+  }
+  &:hover::before {
+    width: 50px;
+  }
 }
 
 .list-inactive {
@@ -51,26 +68,8 @@
   transition-duration: 200ms !important;
 }
 
-.list::before {
-  text-align: end;
-  position: absolute;
-  content: "";
-  margin-top: 30px;
-  width: 0px;
-  height: 3px;
-  opacity: 0.7;
-
-  background-color: var(--foreground-navbar);
-
-  transition: width 0.4s ease-out;
-}
-
-.list:hover::before {
-  width: 50px;
-}
-
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@include respond(small) {
   .list {
     display: none;
     transition: none !important;
@@ -80,7 +79,7 @@
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 768px) {
+@include respond(medium) {
   .list {
     display: none;
     transition: none !important;
@@ -90,13 +89,9 @@
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@include respond(large) {
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@include respond(extraLarge) {
 }

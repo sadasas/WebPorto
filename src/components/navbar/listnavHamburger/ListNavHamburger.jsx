@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-
-import styles from "./ListNavHamburger.module.css";
+import styles from "./ListNavHamburger.module.scss";
 import { List } from "./List";
 import pointerHandler from "../../pointerHandler";
 

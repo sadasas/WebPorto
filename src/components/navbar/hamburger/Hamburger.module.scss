@@ -1,5 +1,7 @@
+@use "../../../variables" as *;
+
 .line {
-  background-color: var(--foreground-navbar);
+  background-color: $foreground-navbar;
   width: 100%;
   height: 2px;
   transition-property: transform opacity;
@@ -30,14 +32,14 @@
   pointer-events: none;
   gap: 10px;
   overflow: hidden;
-  border: solid var(--foreground-navbar) 1px;
+  border: solid $foreground-navbar 1px;
   border-radius: 25px;
-}
 
-.hamburger:hover {
-  background-color: gray;
-  border-radius: 25px;
-  cursor: pointer;
+  &:hover {
+    background-color: gray;
+    border-radius: 25px;
+    cursor: pointer;
+  }
 }
 
 .hamburger-active {
@@ -67,12 +69,32 @@
   animation-name: titleslidein;
   animation-direction: alternate;
   animation-iteration-count: 2;
+
+  @keyframes titleslidein {
+    from {
+      transform: translateY(0px);
+    }
+
+    to {
+      transform: translateY(40px);
+    }
+  }
 }
 
 .title-unhover {
   animation-name: titleslideout;
   animation-direction: alternate;
   animation-iteration-count: 2;
+
+  @keyframes titleslideout {
+    from {
+      transform: translateY(0px);
+    }
+
+    to {
+      transform: translateY(-40px);
+    }
+  }
 }
 
 .lines {
@@ -86,46 +108,28 @@
   width: 40px;
 }
 
-@keyframes titleslidein {
-  from {
-    transform: translateY(0px);
-  }
-
-  to {
-    transform: translateY(40px);
-  }
-}
-
-@keyframes titleslideout {
-  from {
-    transform: translateY(0px);
-  }
-
-  to {
-    transform: translateY(-40px);
-  }
-}
-
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@include respond(small) {
   .hamburger {
     opacity: 1;
     pointer-events: all;
     border: none;
-    z-index: 20;
   }
   .line-1-onClick,
   .line-2-onClick,
   .line-3-onClick {
-    background-color: var(--background-navbar);
+    background-color: $background-navbar;
   }
   .title {
     display: none;
   }
+  .lines {
+    z-index: 20;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 768px) and (min-width: 600px) {
+@include respond(medium) {
   .hamburger {
     opacity: 1;
     pointer-events: all;
@@ -135,7 +139,7 @@
   .line-1-onClick,
   .line-2-onClick,
   .line-3-onClick {
-    background-color: var(--foreground-navbar);
+    background-color: $foreground-navbar;
   }
   .title {
     display: none;
@@ -143,16 +147,9 @@
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  .example {
-    background: blue;
-  }
+@include respond(large) {
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@include respond(extraLarge) {
 }

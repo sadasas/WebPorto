@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./MySkill.module.css";
+import styles from "./MySkill.module.scss";
 import PropTypes from "prop-types";
 
 function Skill({ text, logo, level }) {

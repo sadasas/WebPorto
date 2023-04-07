@@ -6,6 +6,7 @@ export default function pointerHandler(isWhite) {
     "--foreground"
   );
 
-  if (isWhite) document.documentElement.style.setProperty("--cursor-color", bg);
-  else document.documentElement.style.setProperty("--cursor-color", fg);
+  if (isWhite)
+    document.documentElement.style.setProperty("--cursor-color", "black");
+  else document.documentElement.style.setProperty("--cursor-color", "white");
 }

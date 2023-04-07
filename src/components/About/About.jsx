@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import styles from "./About.module.css";
+import styles from "./About.module.scss";
 import picture from "../../assets/profile.png";
 import Biography from "./Biography";
 import MySkill from "./MySkill";

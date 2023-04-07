@@ -1,3 +1,5 @@
+@use "../../variables" as *;
+
 .biography {
   display: flex;
   flex: 1;
@@ -8,11 +10,16 @@
   transition: all;
   transition-duration: 600ms;
   transition-delay: 500ms;
-}
 
-.biography * {
-  line-height: 3rem;
-  font-weight: 100;
+  * {
+    line-height: 3rem;
+    font-weight: 100;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-weight: 1000 !important;
+  }
 }
 
 .biography-inactive {
@@ -21,36 +28,31 @@
   transform: translateX(100px);
 }
 
-.biography h1 {
-  font-size: 3rem;
-  margin-bottom: 30px;
-  font-weight: 1000 !important;
-}
-.biography .description {
+.description {
   line-height: 1.5rem;
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@include respond(small) {
   .biography {
     margin-left: 0px !important;
   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 768px) {
+@include respond(medium) {
   .biography {
     margin-left: 0px !important;
   }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (max-width: 992px) {
+@include respond(large) {
   .biography {
     margin-left: 30px;
   }
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+/* Large devices (laptops/desktops, 992px and up) */
+@include respond(extraLarge) {
 }

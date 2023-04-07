@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./project.module.css";
+import styles from "./project.module.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Content } from "./Content";
 

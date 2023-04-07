@@ -1,3 +1,5 @@
+@use "../../variables" as *;
+
 .content {
   display: flex;
 
@@ -10,26 +12,27 @@
 
 .content-description {
   border-radius: 20px 0 0 20px;
-  background-color: var(--foreground);
+  background-color: $foreground;
   padding: 20px;
   display: flex;
-  color: var(--background);
+  color: $background;
   justify-content: space-between;
   flex-direction: column;
+  h2 {
+    margin: 20px 0px;
+  }
 }
-.content-description h2 {
-  margin: 20px 0px;
-}
+
 .content-description-tag {
   margin: 0;
   display: flex;
   flex-direction: row;
   gap: 20px;
-}
-.content-description-tag > * {
-  border-radius: 30px;
-  padding: 2px 10px;
-  border: solid black 1px;
+  * {
+    border-radius: 30px;
+    padding: 2px 10px;
+    border: solid black 1px;
+  }
 }
 
 .content-description-status {
@@ -41,6 +44,15 @@
   display: flex;
   flex-direction: row;
   gap: 20px;
+  img {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 10px;
+    &:hover {
+      background-color: gray;
+    }
+  }
 }
 .content-description-link-container {
   display: flex;
@@ -49,16 +61,6 @@
   gap: 5px;
 }
 
-.content-description-link img {
-  width: 35px;
-  height: 35px;
-
-  border-radius: 10px;
-}
-
-.content-description-link img:hover {
-  background-color: gray;
-}
 .content-caraousel {
   padding: 20px;
   justify-content: center;
@@ -79,13 +81,12 @@
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@include respond(small) {
   .content {
     display: flex;
     flex-direction: column-reverse;
     width: 90vw !important;
     height: 500px;
-
     transform: translate(0) !important;
   }
   .content-caraousel {
@@ -105,13 +106,14 @@
   .content-description {
     border-radius: 0 0 20px 20px;
     align-items: center;
-
-    height: 200px;
+    height: fit-content;
+    gap: 20px;
+    padding: 10px;
     text-align: center;
   }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 768px) and (min-width: 600px) {
+@include respond(medium) {
   .content {
     display: flex;
     flex-direction: column-reverse;
@@ -134,21 +136,21 @@
     width: 400px !important;
   }
 
-  .content-description h2 {
-    font-size: 2.5rem;
-  }
-  .content-description h5 {
-    font-size: 1rem;
-  }
-  .content-description h3 {
-    font-size: 1.5rem;
-  }
   .content-description {
     border-radius: 0 0 20px 20px;
     align-items: center;
 
     height: 200px;
     text-align: center;
+    h2 {
+      font-size: 2rem;
+    }
+    h5 {
+      font-size: 0.8rem;
+    }
+    h3 {
+      font-size: 1.2rem;
+    }
   }
 }
 
@@ -165,6 +167,28 @@
   }
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+/* Medium devices (landscape tablets, 768px and up) */
+@include respond(large) {
+  .content {
+    width: 80vw !important;
+
+    transform: translate(0) !important;
+  }
+  .content-caraousel-images-potrait {
+    height: 400px !important;
+    width: 250px !important;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@include respond(extraLarge) {
+  .content {
+    width: 80vw !important;
+
+    transform: translate(0) !important;
+  }
+  .content-caraousel-images-potrait {
+    height: 400px !important;
+    width: 250px !important;
+  }
 }

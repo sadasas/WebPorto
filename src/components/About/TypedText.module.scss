@@ -1,33 +1,31 @@
+@use "../../variables" as *;
+
 .text {
-  color: var(--foreground);
+  color: $foreground;
   height: 50px;
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@include respond(small) {
   .text {
     font-size: 3rem;
   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 768px) {
+@include respond(medium) {
   .text {
     font-size: 3.5rem;
   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 992px) {
+@include respond(large) {
   .text {
     font-size: 4.5rem;
   }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@include respond(extraLarge) {
 }

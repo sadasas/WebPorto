@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import styles from "./TypedText.module.css";
+import styles from "./TypedText.module.scss";
 
 function TypedText({ text, delay }) {
   const [revealedChars, setRevealedChars] = useState(0);

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./content.module.css";
+import styles from "./content.module.scss";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";

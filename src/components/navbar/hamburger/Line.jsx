@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 
-import Styles from "./Hamburger.module.css";
+import Styles from "./Hamburger.module.scss";
 
 export function Line({ index }) {
   const { value: isOpen } = useSelector((state) => state.hamburgerToggle);
