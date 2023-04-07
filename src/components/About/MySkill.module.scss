@@ -28,8 +28,10 @@
 }
 
 .skill {
-  overflow: hidden;
-  object-fit: contain;
+  opacity: 0;
+  transform: translateY(90px);
+  transition: opacity 100ms, transform 700ms;
+
   &:hover {
     cursor: pointer;
   }
@@ -47,7 +49,7 @@
   &:hover::before {
     content: attr(data--skill);
     width: 180px;
-    transition: width 0.4s ease-out, color 200ms 400ms, font-size 5ms 400ms;
+    transition: width 0.4s 0ms, color 200ms 400ms, font-size 5ms 600ms;
     padding: 5px 10px;
     border-radius: 10px 10px 10px 0px;
     color: $background;
@@ -61,6 +63,10 @@
   }
 }
 
+.skill-active {
+  opacity: 1;
+  transform: translateY(0px);
+}
 /* Extra small devices (phones, 600px and down) */
 @include respond(small) {
   .mySkill {

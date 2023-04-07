@@ -2,9 +2,14 @@ import React from "react";
 import styles from "./MySkill.module.scss";
 import PropTypes from "prop-types";
 
-function Skill({ text, logo, level }) {
+function Skill({ text, logo, level, isActive, index }) {
+  const calDelay = () => 300 * index;
   return (
-    <div data--skill={text + " | " + level} className={styles.skill}>
+    <div
+      style={{ transitionDelay: calDelay() + "ms" }}
+      data--skill={text + " | " + level}
+      className={`${styles.skill} ${isActive ? styles["skill-active"] : null}`}
+    >
       <img src={logo}></img>
     </div>
   );
@@ -13,6 +18,7 @@ Skill.propTypes = {
   text: PropTypes.string,
   level: PropTypes.string,
   logo: PropTypes.string,
+  index: PropTypes.number,
   isActive: PropTypes.bool,
 };
 
