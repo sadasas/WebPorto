@@ -36,14 +36,14 @@ h5 {
 /* Medium devices (landscape tablets, 768px and up) */
 @include respond(medium) {
   html {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @include respond(large) {
   html {
-    font-size: 11px;
+    font-size: 13px;
   }
 }
 
