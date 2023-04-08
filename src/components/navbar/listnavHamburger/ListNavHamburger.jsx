@@ -21,7 +21,7 @@ function ListNavHamburger() {
       }`}
     >
       <ul>
-        <List link="#introduction" text="HOME" index={1} />
+        <List link="#about" text="HOME" index={1} />
         <List link="#about" text="ABOUT" index={2} />
         <List link="#projects" text="WORKS" index={3} />
         <List link="#contact" text="CONTACT" index={4} />

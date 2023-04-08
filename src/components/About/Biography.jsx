@@ -18,7 +18,7 @@ function Biography({ isActive }) {
       <h3 className={styles.description}>
         {" "}
         A freelancer who provides services for game development and web
-        development, for all businesses with more than 1 years of experience{" "}
+        development, and an explorer who is passionate about technology{" "}
       </h3>
     </div>
   );
