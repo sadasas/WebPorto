@@ -11,7 +11,7 @@ function Biography({ isActive }) {
         isActive ? null : styles["biography-inactive"]
       }`}
     >
-      <h3>Hello. I'M WAHYU SETIO RILO PAMBUDI</h3>
+      <h2>Hello. I'M WAHYU SETIO RILO PAMBUDI</h2>
 
       <TypedText text={job} delay={100} />
 

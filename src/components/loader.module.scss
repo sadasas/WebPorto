@@ -1,0 +1,19 @@
+@use "../variables" as *;
+
+.loader {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 10vw;
+  }
+}
+
+@include respond(small) {
+  .loader {
+    img {
+      width: 20vw;
+    }
+  }
+}
