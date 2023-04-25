@@ -7,7 +7,26 @@ function Projects() {
   return (
     <section id="projects" className={styles.projects}>
       <h1>Projects</h1>
-
+      <Content
+        title="JustSee"
+        description="JustSee gives fans everywhere a way to discover, save, and enjoy the entertainment they love the most. "
+        tag={["web", "nextjs", "typescript"]}
+        link={[
+          {
+            img: "/github.png",
+            href: "https://github.com/sadasas/movie-watcher/",
+            content: "Source Code",
+          },
+          {
+            img: "/web.png",
+            href: "https://just-see-sadasas.vercel.app/",
+            content: "Live Demo",
+          },
+        ]}
+        status="work in progress"
+        images={["/justSee/1.png", "/justSee/2.png"]}
+        isLandscape={true}
+      />
       <Content
         title="TCL App"
         description="Ecommerce with simplicity and clean design "

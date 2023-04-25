@@ -118,13 +118,10 @@
   .line-1-onClick,
   .line-2-onClick,
   .line-3-onClick {
-    background-color: $background-navbar;
+    background-color: black;
   }
   .title {
     display: none;
-  }
-  .lines {
-    z-index: 20;
   }
 }
 
@@ -134,12 +131,12 @@
     opacity: 1;
     pointer-events: all;
     border: none;
-    z-index: 20;
+    z-index: 99;
   }
   .line-1-onClick,
   .line-2-onClick,
   .line-3-onClick {
-    background-color: $foreground-navbar;
+    background-color: black;
   }
   .title {
     display: none;

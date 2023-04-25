@@ -6,6 +6,10 @@
   background-color: $background-navbar;
   border: 0 0 0 1px;
   border: black solid;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
 }
 .navbar-container {
   width: 80vw;
@@ -15,13 +19,6 @@
   flex-direction: row;
   align-items: center;
   padding: 20px 0;
-}
-
-.navbar-scroll {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
 }
 
 .logo {

@@ -6,7 +6,7 @@ const hamburgerToggleSlice = createSlice({
   reducers: {
     hamburgerToggled(state) {
       //immer makes it immutable
-      console.log(state.value);
+
       state.value = !state.value;
     },
   },

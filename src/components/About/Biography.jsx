@@ -16,7 +16,6 @@ function Biography({ isActive }) {
       <TypedText text={job} delay={100} />
 
       <h3 className={styles.description}>
-        {" "}
         A freelancer who provides services for game development and web
         development, and an explorer who is passionate about technology{" "}
       </h3>

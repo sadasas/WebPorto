@@ -34,20 +34,12 @@ ListNav.propTypes = {
 function Navbar() {
   const [pos, setPos] = useState(0);
   const dispatch = useDispatch();
+
   const [scrollStatus, setScrollStatus] = useState({
     scrollDirection: "",
     scrollPos: 0,
   });
   const { value: isOpen } = useSelector((state) => state.hamburgerToggle);
-  useEffect(() => setPos(document.body.getBoundingClientRect().top));
-  useEffect(() => {
-    window.addEventListener("scroll", handleScrollDocument);
-    return () => window.removeEventListener("scroll", handleScrollDocument);
-  }, []);
-  useEffect(() => {
-    if (pos == 0 && isOpen) toggleHamburger();
-  }, [pos]);
-
   function handleScrollDocument() {
     setScrollStatus((prev) => {
       return {
@@ -59,15 +51,20 @@ function Navbar() {
       };
     });
   }
+  useEffect(() => setPos(document.body.getBoundingClientRect().top));
+  useEffect(() => {
+    window.addEventListener("scroll", handleScrollDocument);
+    return () => window.removeEventListener("scroll", handleScrollDocument);
+  }, []);
+  useEffect(() => {
+    if (pos == 0 && isOpen) toggleHamburger();
+  }, [pos]);
+
   const toggleHamburger = () => dispatch(hamburgerToggled({}));
 
   return (
     <section id="navbar">
-      <nav
-        className={`${styles.navbar} ${
-          pos < 0 ? styles["navbar-scroll"] : null
-        }`}
-      >
+      <nav className={styles.navbar}>
         <div className={styles["navbar-container"]}>
           <h2 className={styles.logo}>WSRP</h2>
           <div className={styles["list-nav"]}>
