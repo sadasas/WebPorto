@@ -35,29 +35,17 @@ function Navbar() {
   const [pos, setPos] = useState(0);
   const dispatch = useDispatch();
 
-  const [scrollStatus, setScrollStatus] = useState({
-    scrollDirection: "",
-    scrollPos: 0,
-  });
   const { value: isOpen } = useSelector((state) => state.hamburgerToggle);
   function handleScrollDocument() {
-    setScrollStatus((prev) => {
-      return {
-        scrollDirection:
-          document.body.getBoundingClientRect().top > prev.scrollPos
-            ? "up"
-            : "down",
-        scrollPos: document.body.getBoundingClientRect().top,
-      };
-    });
+    setPos(document.body.getBoundingClientRect().top);
   }
-  useEffect(() => setPos(document.body.getBoundingClientRect().top));
+  useEffect(() => setPos(document.body.getBoundingClientRect().top), []);
   useEffect(() => {
     window.addEventListener("scroll", handleScrollDocument);
     return () => window.removeEventListener("scroll", handleScrollDocument);
   }, []);
   useEffect(() => {
-    if (pos == 0 && isOpen) toggleHamburger();
+    if (pos > 0 && isOpen) toggleHamburger();
   }, [pos]);
 
   const toggleHamburger = () => dispatch(hamburgerToggled({}));
