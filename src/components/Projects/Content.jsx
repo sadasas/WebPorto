@@ -26,11 +26,10 @@ export function Content({
 
   const containerVariant = {
     visible: {
-      width: "1200px",
       opacity: 1,
       transition: { duration: 0.5 },
     },
-    hidden: { width: "0", opacity: 0 },
+    hidden: { opacity: 0 },
   };
 
   const descriptionVariant = {

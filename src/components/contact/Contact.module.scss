@@ -12,14 +12,8 @@
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
-    font-size: 3rem;
   }
-  h4 {
-    font-size: 1.5rem;
-  }
-  h3 {
-    font-size: 2rem;
-  }
+
   a {
     text-decoration: none;
     color: $background;
@@ -58,4 +52,17 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 10px;
+}
+
+@include respond(small) {
+  .container {
+    font-size: 10px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@include respond(medium) {
+  .container {
+    font-size: 15px;
+  }
 }

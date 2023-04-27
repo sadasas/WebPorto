@@ -6,7 +6,7 @@ import { Content } from "./Content";
 function Projects() {
   return (
     <section id="projects" className={styles.projects}>
-      <h1>Projects</h1>
+      <h1 className={styles.title}>Projects</h1>
       <Content
         title="JustSee"
         description="JustSee gives fans everywhere a way to discover, save, and enjoy the entertainment they love the most. "
