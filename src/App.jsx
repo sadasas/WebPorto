@@ -15,20 +15,6 @@ function App() {
     <>
       <Suspense fallback={<Loader />}>
         <BrowserRouter>
-          <AnimatedCursor
-            color="255,255,255"
-            innerSize={8}
-            outerSize={35}
-            innerScale={1}
-            outerScale={1.7}
-            outerAlpha={0}
-            outerStyle={{
-              border: "3px solid var(--cursor-color)",
-            }}
-            innerStyle={{
-              backgroundColor: "var(--cursor-color)",
-            }}
-          />
           <Navbar />
           <About />
           <Projects />

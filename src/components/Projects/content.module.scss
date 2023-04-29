@@ -2,7 +2,7 @@
 
 .content {
   display: flex;
-  width: 80vw;
+  width: 800px;
   height: 400px;
   transition: all;
 }
@@ -60,23 +60,25 @@
   align-items: center;
   gap: 5px;
 }
-
+.content-caraousel-container {
+  height: 100%;
+  width: 400px;
+}
 .content-caraousel {
   padding: 20px;
   justify-content: center;
   display: flex;
-
   flex-direction: column;
-  width: 45%;
+  height: 100%;
+  width: 100%;
 }
-
 .content-caraousel-images-potrait {
-  width: 300px !important;
-  height: 500px !important;
+  width: 200px !important;
+  height: 300px !important;
 }
 .content-caraousel-images-landscape {
-  width: 600px !important;
-  height: 300px !important;
+  width: 400px !important;
+  height: 200px !important;
   object-fit: contain;
 }
 
@@ -89,7 +91,7 @@
     height: 600px;
     transform: translate(0) !important;
   }
-  .content-caraousel {
+  .content-caraousel-container {
     border-radius: 20px 20px 0 0 !important;
     border: "solid white 1px" !important;
     width: 90vw !important;
@@ -116,15 +118,15 @@
   .content {
     display: flex;
     flex-direction: column-reverse;
-    width: 80vw;
+    width: 450px;
     height: 700px;
 
     transform: translate(0);
   }
-  .content-caraousel {
+  .content-caraousel-container {
     border-radius: 20px 20px 0 0 !important;
     border: "solid white 1px";
-    width: 80vw;
+    width: 450px;
   }
   .content-caraousel-images-potrait {
     height: 300px !important;
@@ -137,29 +139,23 @@
   .content-description {
     border-radius: 0 0 20px 20px;
     align-items: center;
-
     height: 200px;
     text-align: center;
-    h2 {
-      font-size: 2rem;
-    }
-    h5 {
-      font-size: 0.8rem;
-    }
-    h3 {
-      font-size: 1.2rem;
-    }
   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @include respond(large) {
   .content {
+    width: 700px;
     transform: translate(0) !important;
   }
+  .content-caraousel-container {
+    width: 350px;
+  }
   .content-caraousel-images-potrait {
-    height: 400px !important;
-    width: 250px !important;
+    height: 300px !important;
+    width: 200px !important;
   }
 }
 
@@ -169,7 +165,7 @@
     transform: translate(0) !important;
   }
   .content-caraousel-images-potrait {
-    height: 400px !important;
-    width: 250px !important;
+    width: 200px !important;
+    height: 300px !important;
   }
 }

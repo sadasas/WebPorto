@@ -65,6 +65,7 @@ export function Content({
   useEffect(() => {
     pointerHandler(IsHoverDes);
   }, [IsHoverDes]);
+
   return (
     <motion.div
       ref={ref}
@@ -123,7 +124,7 @@ export function Content({
         variants={imageVariant}
         initial="hidden"
         animate={control}
-        className={styles["content-caraousel"]}
+        className={styles["content-caraousel-container"]}
       >
         <Carousel
           showThumbs={false}
@@ -131,6 +132,8 @@ export function Content({
           showArrows={true}
           autoPlay="true"
           infiniteLoop="true"
+          centerMode="true"
+          className={styles["content-caraousel"]}
         >
           {images &&
             images.length > 0 &&
