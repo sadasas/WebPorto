@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./MySkill.module.scss";
 import PropTypes from "prop-types";
+import styles from "../../styles/about/MySkill.module.scss";
 
 function Skill({ text, logo, level, isActive, index }) {
   const calDelay = () => 300 * index;
@@ -74,13 +74,6 @@ function MySkill({ isActive }) {
           isActive={isActive}
           text="MongoDB"
           logo="/skill/MongoDB.png"
-          level="Intermediate"
-        />
-        <Skill
-          index={8}
-          isActive={isActive}
-          text="Tailwindcss"
-          logo="/skill/Tailwind.svg"
           level="Intermediate"
         />
       </div>

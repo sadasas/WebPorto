@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { hamburgerToggled } from "../../../features/hamburger/hamburgerToggleSlice";
-import styles from "./Hamburger.module.scss";
+import styles from "../../../styles/navbar/hamburger/Hamburger.module.scss";
 import { Line } from "./Line";
 
 function Hamburger({ pos }) {

@@ -1,26 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AiOutlineClose } from "react-icons/ai";
 
 import { hamburgerToggled } from "../../../features/hamburger/hamburgerToggleSlice";
-import styles from "./ListNavHamburger.module.scss";
+import styles from "../../../styles/navbar/list_nav_hamburger/ListNavHamburger.module.scss";
 import { List } from "./List";
-import pointerHandler from "../../pointerHandler";
 
 function ListNavHamburger() {
-  const [isHover, SetIsHover] = useState(false);
   const dispatch = useDispatch();
   const { value: isOpen } = useSelector((state) => state.hamburgerToggle);
   const toggleHamburger = () => dispatch(hamburgerToggled({}));
-  useEffect(() => {
-    pointerHandler(isHover);
-  }, [isHover]);
 
   return (
     <>
       <div
-        onMouseEnter={() => SetIsHover(true)}
-        onMouseLeave={() => SetIsHover(false)}
         className={`${styles["list-nav"]} ${
           isOpen ? null : styles["list-nav-close"]
         }`}

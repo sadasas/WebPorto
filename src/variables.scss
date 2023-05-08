@@ -6,17 +6,17 @@ $cursor-color: white;
 
 @mixin respond($breakpoint) {
   @if ($breakpoint == extraLarge) {
-    @media only screen and (min-width: 992px) and (max-width: 1200px) {
+    @media only screen and (min-width: 993px) and (max-width: 1200px) {
       @content;
     }
   }
   @if ($breakpoint == large) {
-    @media only screen and (max-width: 992px) and (min-width: 768px) {
+    @media only screen and (max-width: 992px) and (min-width: 769px) {
       @content;
     }
   }
   @if ($breakpoint == medium) {
-    @media only screen and (max-width: 768px) and (min-width: 600px) {
+    @media only screen and (max-width: 768px) and (min-width: 601px) {
       @content;
     }
   }

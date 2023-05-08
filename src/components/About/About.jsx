@@ -1,23 +1,15 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import styles from "./About.module.scss";
+
+import styles from "../../styles/about/About.module.scss";
 import picture from "../../assets/profile.png";
 import Biography from "./Biography";
 import MySkill from "./MySkill";
-import pointerHandler from "../pointerHandler";
 
 function Picture({ isActive }) {
-  const [isHover, setIsHover] = useState(false);
-
-  useEffect(() => {
-    pointerHandler(isHover);
-  }, [isHover]);
-
   return (
     <div
-      onMouseEnter={() => setIsHover(true)}
-      onMouseLeave={() => setIsHover(false)}
       className={`${styles.photo} ${
         isActive ? null : styles["photo-inactive"]
       }`}

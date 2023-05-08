@@ -1,6 +1,5 @@
 import React, { Suspense } from "react";
 import { BrowserRouter } from "react-router-dom";
-import AnimatedCursor from "react-animated-cursor";
 
 const About = React.lazy(() => import("./components/About/About"));
 const Contact = React.lazy(() => import("./components/contact/Contact"));

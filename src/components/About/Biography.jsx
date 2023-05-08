@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./Biography.module.scss";
+
+import styles from "../../styles/about/Biography.module.scss";
 import TypedText from "./TypedText";
 
 const job = ["GAME PROGAMMER", "REACT DEVELOPER"];

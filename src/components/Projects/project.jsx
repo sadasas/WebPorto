@@ -1,6 +1,7 @@
 import React from "react";
-import styles from "./project.module.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+import styles from "../../styles/project/project.module.scss";
 import { Content } from "./Content";
 
 function Projects() {
@@ -10,7 +11,16 @@ function Projects() {
       <Content
         title="JustSee"
         description="JustSee gives fans everywhere a way to discover, save, and enjoy the entertainment they love the most. "
-        tag={["web", "nextjs", "typescript"]}
+        tag={[
+          "web",
+          "nextjs",
+          "typescript",
+          "redux",
+          "react query",
+          "react-window",
+          "axios",
+          "sass",
+        ]}
         link={[
           {
             img: "/github.png",
@@ -30,7 +40,7 @@ function Projects() {
       <Content
         title="TCL App"
         description="Ecommerce with simplicity and clean design "
-        tag={["web", "react", "redux"]}
+        tag={["web", "react", "redux", "sass", "vite"]}
         link={[
           {
             img: "/github.png",
