@@ -40,7 +40,7 @@ function Projects() {
       <Content
         title="TCL App"
         description="Ecommerce with simplicity and clean design "
-        tag={["web", "react", "redux", "sass", "vite"]}
+        tag={["web", "react", "redux", "sass", "vite", "graphql", "mongodb"]}
         link={[
           {
             img: "/github.png",

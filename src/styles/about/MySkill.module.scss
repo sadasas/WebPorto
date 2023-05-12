@@ -21,13 +21,12 @@
 
 .mySkill-grid {
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 4rem));
+  grid-template-columns: repeat(8, minmax(0, 4rem));
   gap: 10px;
-  justify-content: center;
-  align-items: center;
 }
 
 .skill {
+  place-self: center;
   opacity: 0;
   transform: translateY(90px);
   transition: opacity 100ms, transform 700ms;

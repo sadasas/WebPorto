@@ -76,6 +76,20 @@ function MySkill({ isActive }) {
           logo="/skill/MongoDB.png"
           level="Intermediate"
         />
+        <Skill
+          index={8}
+          isActive={isActive}
+          text="Graphql"
+          level=""
+          logo="/skill/GraphQL.png"
+        />
+        <Skill
+          index={9}
+          isActive={isActive}
+          text="Nextjs"
+          level=""
+          logo="/skill/nextjs.svg"
+        />
       </div>
     </div>
   );
