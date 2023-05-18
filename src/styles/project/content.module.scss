@@ -4,7 +4,7 @@
   display: flex;
   width: 800px;
   height: 400px;
-  transition: all;
+  overflow: hidden;
 }
 
 .content-description {
@@ -18,7 +18,7 @@
   color: $background;
   justify-content: space-between;
   flex-direction: column;
-  z-index: 99999;
+
   h2 {
     margin: 20px 0px;
   }
@@ -68,6 +68,7 @@
   flex: 1 1 auto;
   width: 50%;
   height: 100%;
+  border-radius: 0 20px 20px 0;
 }
 .content-caraousel {
   padding: 20px;
@@ -94,7 +95,6 @@
     flex-direction: column-reverse;
     width: 90vw;
     height: 600px;
-    transform: translate(0) !important;
   }
   .content-caraousel-container {
     border-radius: 20px 20px 0 0 !important;
@@ -130,8 +130,6 @@
     flex-direction: column-reverse;
     width: 450px;
     height: 700px;
-
-    transform: translate(0);
   }
   .content-caraousel-container {
     border-radius: 20px 20px 0 0 !important;
@@ -162,7 +160,6 @@
 @include respond(large) {
   .content {
     width: 700px;
-    transform: translate(0) !important;
   }
   .content-caraousel-container {
     width: 350px;
@@ -175,9 +172,6 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @include respond(extraLarge) {
-  .content {
-    transform: translate(0) !important;
-  }
   .content-caraousel-images-potrait {
     width: 200px !important;
     height: 300px !important;

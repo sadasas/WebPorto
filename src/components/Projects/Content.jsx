@@ -1,8 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { motion, useInView } from "framer-motion";
 import { Carousel } from "react-responsive-carousel";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -17,62 +15,48 @@ export function Content({
   images,
   isLandscape,
 }) {
-  const control = useAnimation();
-  const [ref, inView] = useInView({
-    threshold: 0.8,
-  });
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
-  const containerVariant = {
-    visible: {
-      opacity: 1,
-      transition: { duration: 0.5 },
-    },
-    hidden: { opacity: 0 },
+  const containerMotion = {
+    visible: {},
+    hidden: {},
   };
 
-  const descriptionVariant = {
+  const descriptionMotion = {
     visible: {
-      opacity: 100,
-
-      transition: { duration: 0.9 },
-    },
-    hidden: { opacity: 0 },
-  };
-  const imageVariant = {
-    visible: {
-      "border-radius": "0 20px 20px 0",
-      border: "solid white 1px",
-      opacity: 1,
-      transition: { duration: 0.9 },
+      x: 0,
+      transition: { duration: 0.4 },
     },
     hidden: {
+      x: "-100%",
+    },
+  };
+  const imageMotion = {
+    visible: {
+      x: 0,
+      border: "solid white 1px",
+      transition: { duration: 0.4, border: { delay: 0.4 } },
+    },
+    hidden: {
+      x: "100%",
       border: "none",
-      opacity: 0,
     },
   };
 
   const placeholderLandscapeImg = "./placeholder/300x500.png";
   const placeholderPotraitImg = "./placeholder/600x300.png";
 
-  useEffect(() => {
-    if (inView) {
-      control.start("visible");
-    }
-  }, [control, inView]);
-
   return (
     <motion.div
       ref={ref}
-      variants={containerVariant}
+      variants={containerMotion}
       initial="hidden"
-      animate={control}
+      animate={isInView ? "visible" : "hidden"}
       className={styles.content}
     >
       <motion.div
-        ref={ref}
-        variants={descriptionVariant}
-        initial="hidden"
-        animate={control}
+        variants={descriptionMotion}
         className={styles["content-description"]}
       >
         <div>
@@ -112,10 +96,7 @@ export function Content({
         </div>
       </motion.div>
       <motion.div
-        ref={ref}
-        variants={imageVariant}
-        initial="hidden"
-        animate={control}
+        variants={imageMotion}
         className={styles["content-caraousel-container"]}
       >
         <Carousel

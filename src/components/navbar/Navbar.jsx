@@ -1,42 +1,61 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 import { HashLink } from "react-router-hash-link";
+import { motion } from "framer-motion";
 
+import { HamburgerToggleContext } from "../../context/hamburgerContext";
 import Hamburger from "./hamburger/Hamburger";
 import styles from "../../styles/navbar/Navbar.module.scss";
-import { hamburgerToggled } from "../../features/hamburger/hamburgerToggleSlice";
 import ListNavHamburger from "./listnavHamburger/ListNavHamburger";
 
-function ListNav({ text, link, pos, index }) {
-  const calDelayOut = (i) => {
-    return i * 200;
+function ListNav({ text, link }) {
+  const listMotion = {
+    hidden: {
+      transition: { duration: 0.5 },
+      x: "100px",
+      opacity: 0,
+    },
+    visible: {
+      transition: { duration: 0.5 },
+      x: 0,
+      opacity: 1,
+    },
   };
   return (
-    <HashLink
-      style={{ transitionDelay: calDelayOut(index) + "ms" }}
-      to={link}
-      className={`${styles.list} ${
-        pos < 0 ? styles["list-inactive"] : styles["list-active"]
-      }`}
-      smooth
-    >
-      <h4>{text}</h4>
-    </HashLink>
+    <motion.div variants={listMotion}>
+      <HashLink to={link} className={styles.list} smooth>
+        <h4>{text}</h4>
+      </HashLink>
+    </motion.div>
   );
 }
 ListNav.propTypes = {
   text: PropTypes.string,
   link: PropTypes.string,
   pos: PropTypes.number,
-  index: PropTypes.number,
 };
 
 function Navbar() {
   const [pos, setPos] = useState(0);
-  const dispatch = useDispatch();
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
-  const { value: isOpen } = useSelector((state) => state.hamburgerToggle);
+  const listNavMotion = {
+    hidden: {
+      display: "none",
+      transition: {
+        when: "afterChildren",
+        staggerChildren: 0.3,
+      },
+    },
+    visible: {
+      display: "flex",
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
   function handleScrollDocument() {
     setPos(document.body.getBoundingClientRect().top);
   }
@@ -46,37 +65,37 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScrollDocument);
   }, []);
   useEffect(() => {
-    if (pos > 0 && isOpen) toggleHamburger();
+    if (pos > 0 && isHamburgerOpen) setIsHamburgerOpen(false);
   }, [pos]);
 
-  const toggleHamburger = () => dispatch(hamburgerToggled({}));
-
   return (
-    <section id="navbar">
-      <nav className={styles.navbar}>
-        <div className={styles["navbar-container"]}>
-          <h2 className={styles.logo}>WSRP</h2>
-          <div className={styles["list-nav"]}>
-            <ListNav index={1} pos={pos} link="#home" text="Home"></ListNav>
-            <ListNav
-              index={2}
-              pos={pos}
-              link="#projects"
-              text="Works"
-            ></ListNav>
-            <ListNav index={3} pos={pos} link="#about" text="About"></ListNav>
-            <ListNav
-              index={4}
-              pos={pos}
-              link="#contact"
-              text="Contact"
-            ></ListNav>
+    <HamburgerToggleContext.Provider
+      value={{
+        isHamburgerOpen,
+        setIsHamburgerOpen,
+      }}
+    >
+      <section id="navbar">
+        <nav className={styles.navbar}>
+          <div className={styles["navbar-container"]}>
+            <h2 className={styles.logo}>WSRP</h2>
+            <motion.div
+              initial="visible"
+              animate={pos > 0 ? "visible" : "hidden"}
+              variants={listNavMotion}
+              className={styles["list-nav"]}
+            >
+              <ListNav link="#home" text="Home"></ListNav>
+              <ListNav link="#projects" text="Works"></ListNav>
+              <ListNav index={3} pos={pos} link="#about" text="About"></ListNav>
+              <ListNav link="#contact" text="Contact"></ListNav>
+            </motion.div>
+            <Hamburger pos={pos} />
           </div>
-          <Hamburger pos={pos} />
-        </div>
-      </nav>
-      <ListNavHamburger />
-    </section>
+        </nav>
+        <ListNavHamburger />
+      </section>
+    </HamburgerToggleContext.Provider>
   );
 }
 

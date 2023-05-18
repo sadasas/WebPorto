@@ -1,16 +1,14 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useContext } from "react";
 
-import { hamburgerToggled } from "../../../features/hamburger/hamburgerToggleSlice";
 import styles from "../../../styles/navbar/hamburger/Hamburger.module.scss";
 import { Line } from "./Line";
+import { HamburgerToggleContext } from "../../../context/hamburgerContext";
 
 function Hamburger({ pos }) {
   const [isHover, setIsHover] = useState(false);
-  const dispatch = useDispatch();
-  function toggleHamburger() {
-    dispatch(hamburgerToggled({}));
-  }
+  const { isHamburgerOpen, setIsHamburgerOpen } = useContext(
+    HamburgerToggleContext
+  );
   return (
     <div
       onMouseEnter={(e) => {
@@ -24,14 +22,14 @@ function Hamburger({ pos }) {
       className={`${styles.hamburger} ${
         pos < 0 ? styles["hamburger-active"] : styles["hamburger-inactive"]
       }`}
-      onClick={toggleHamburger}
+      onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}
     >
       <div
         className={`${styles.title} ${
           pos < 0 ? styles["title-active"] : null
         } ${isHover ? styles["title-hover"] : styles["title-unhover"]}`}
       >
-        <h3>MENU</h3>
+        <h3>{isHover ? (isHamburgerOpen ? "Close" : "Open") : "Menu"}</h3>
       </div>
 
       <div className={styles.lines}>

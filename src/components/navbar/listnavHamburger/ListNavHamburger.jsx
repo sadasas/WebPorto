@@ -1,33 +1,70 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useContext } from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import { motion } from "framer-motion";
 
-import { hamburgerToggled } from "../../../features/hamburger/hamburgerToggleSlice";
 import styles from "../../../styles/navbar/list_nav_hamburger/ListNavHamburger.module.scss";
 import { List } from "./List";
+import { HamburgerToggleContext } from "../../../context/hamburgerContext";
 
 function ListNavHamburger() {
-  const dispatch = useDispatch();
-  const { value: isOpen } = useSelector((state) => state.hamburgerToggle);
-  const toggleHamburger = () => dispatch(hamburgerToggled({}));
+  const { isHamburgerOpen, setIsHamburgerOpen } = useContext(
+    HamburgerToggleContext
+  );
+
+  ///frame motion variant
+  const containerMotion = {
+    hidden: {
+      display: "none",
+      transition: { when: "afterChildren" },
+    },
+    visible: {
+      display: "inline",
+      transition: { when: "beforeChildren" },
+    },
+  };
+
+  const ul = {
+    hidden: {
+      width: 0,
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+        opacity: { duration: 0.2, delay: 0.3 },
+        when: "afterChildren",
+        staggerChildren: 0.3,
+      },
+    },
+    visible: {
+      width: "100%",
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.3,
+      },
+    },
+  };
 
   return (
     <>
-      <div
-        className={`${styles["list-nav"]} ${
-          isOpen ? null : styles["list-nav-close"]
-        }`}
+      <motion.div
+        initial="hidden"
+        animate={isHamburgerOpen ? "visible" : "hidden"}
+        variants={containerMotion}
+        className={styles["list-nav"]}
       >
-        <div onClick={() => toggleHamburger()} className={styles["close-btn"]}>
+        <div
+          onClick={() => setIsHamburgerOpen(false)}
+          className={styles["close-btn"]}
+        >
           <AiOutlineClose />
         </div>
-        <ul>
+        <motion.ul variants={ul}>
           <List link="#about" text="HOME" index={1} />
           <List link="#about" text="ABOUT" index={2} />
           <List link="#projects" text="WORKS" index={3} />
           <List link="#contact" text="CONTACT" index={4} />
-        </ul>
-      </div>
+        </motion.ul>
+      </motion.div>
     </>
   );
 }

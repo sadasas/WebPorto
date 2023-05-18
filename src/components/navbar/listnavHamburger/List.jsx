@@ -1,54 +1,70 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { HashLink } from "react-router-hash-link";
 import PropTypes from "prop-types";
-import { useSelector, useDispatch } from "react-redux";
+import { motion } from "framer-motion";
 
-import { hamburgerToggled } from "../../../features/hamburger/hamburgerToggleSlice";
-import styles from "../../../styles/navbar/list_nav_hamburger/ListNavHamburger.module.scss";
+import styles from "../../../styles/navbar/list_nav_hamburger/List.module.scss";
+import { HamburgerToggleContext } from "../../../context/hamburgerContext";
 
 export function List({ text, index, link }) {
-  const [hover, setHover] = useState(false);
-  const dispatch = useDispatch();
-  const { value: isOpen } = useSelector((state) => state.hamburgerToggle);
+  const { isHamburgerOpen, setIsHamburgerOpen } = useContext(
+    HamburgerToggleContext
+  );
 
-  const handleMouseEnter = () => setHover(true);
-  const handleMouseLeave = () => setHover(false);
-  const toggleHamburger = () => dispatch(hamburgerToggled({}));
-
-  function calDurByIndex() {
-    return 200 + 100 * index;
-  }
+  //frame motion variant
+  const listWrapperMotion = {
+    hidden: {
+      opacity: 0,
+      transition: { duration: 0.2 },
+    },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.4 },
+    },
+  };
+  const listMotion = {
+    initial: {},
+    hover: {},
+  };
+  const arrowMotion = {
+    initial: {
+      width: 0,
+      opacity: 0,
+      transition: { duration: 0.2 },
+    },
+    hover: {
+      width: "1.2rem",
+      opacity: 1,
+      transition: { duration: 0.2, opacity: { delay: 0.1 } },
+    },
+  };
+  const numberMotion = {
+    hover: {
+      rotate: "1turn",
+      transition: { duration: 0.3 },
+    },
+  };
 
   return (
-    <>
-      <HashLink to={link} className={styles["list-nav-content"]} smooth>
-        <li
-          onClick={toggleHamburger}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+    <motion.div
+      className={styles["list-nav-content"]}
+      variants={listWrapperMotion}
+    >
+      <HashLink to={link} smooth>
+        <motion.li
+          variants={listMotion}
+          whileHover="hover"
+          initial="initial"
+          onClick={() => setIsHamburgerOpen(false)}
         >
-          {hover && <h3>&rarr;</h3>}
-          <h1
-            style={{ transitionDelay: calDurByIndex() + "ms" }}
-            className={`${styles["text-list"]}  ${
-              isOpen ? styles["text-list-open"] : styles["text-list-close"]
-            }`}
-          >
-            {text}
-          </h1>
-          <h2
-            className={`${styles["number-list"]} ${
-              hover ? styles["number-list-hover"] : null
-            }`}
-          >
+          <motion.h2 variants={arrowMotion}>&rarr;</motion.h2>
+          <motion.h1 className={styles["text-list"]}>{text}</motion.h1>
+          <motion.p variants={numberMotion} className={styles["number-list"]}>
             {index}
-          </h2>
-        </li>
+          </motion.p>
+        </motion.li>
       </HashLink>
-      <div
-        className={`${hover ? styles["line-hover"] : null} ${styles.line}`}
-      ></div>
-    </>
+    </motion.div>
   );
 }
 List.propTypes = {
