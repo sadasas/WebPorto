@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { HashLink } from "react-router-hash-link";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
-import styles from "../../../styles/navbar/list_nav_hamburger/List.module.scss";
-import { HamburgerToggleContext } from "../../../context/hamburgerContext";
+import styles from "@/styles/navbar/list_nav_hamburger/List.module.scss";
+import { HamburgerToggleContext } from "@/context/hamburgerContext";
 
 export function List({ text, index, link }) {
   const { isHamburgerOpen, setIsHamburgerOpen } = useContext(

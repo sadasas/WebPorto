@@ -1,7 +1,7 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import styles from "../../styles/project/project.module.scss";
+import styles from "@/styles/project/project.module.scss";
 import { Content } from "./Content";
 
 function Projects() {
@@ -23,18 +23,18 @@ function Projects() {
         ]}
         link={[
           {
-            img: "/github.png",
+            img: "/img/github.png",
             href: "https://github.com/sadasas/movie-watcher/",
             content: "Source Code",
           },
           {
-            img: "/web.png",
+            img: "/img/web.png",
             href: "https://just-see-sadasas.vercel.app/",
             content: "Live Demo",
           },
         ]}
         status="work in progress"
-        images={["/justSee/1.png", "/justSee/2.png"]}
+        images={["/img/justSee/1.png", "/img/justSee/2.png"]}
         isLandscape={true}
       />
       <Content
@@ -43,18 +43,18 @@ function Projects() {
         tag={["web", "react", "redux", "sass", "vite", "graphql", "mongodb"]}
         link={[
           {
-            img: "/github.png",
+            img: "/img/github.png",
             href: "https://github.com/sadasas/TCL/",
             content: "Source Code",
           },
           {
-            img: "/web.png",
+            img: "/img/web.png",
             href: "https://tcl-eight.vercel.app/",
             content: "Live Demo",
           },
         ]}
         status="work in progress"
-        images={["/TCL/1.png", "/TCL/2.png", "/TCL/3.png"]}
+        images={["/img/TCL/1.png", "/img/TCL/2.png", "/img/TCL/3.png"]}
         isLandscape={true}
       />
       <Content
@@ -63,7 +63,7 @@ function Projects() {
         tag={["Game", "Unity", "3D", "Racing Game"]}
         link={[
           {
-            img: "/github.png",
+            img: "/img/github.png",
             href: "https://github.com/sadasas/BalapEgrang",
             content: "Source Code",
           },
@@ -78,17 +78,22 @@ function Projects() {
         tag={["Game", "Unity", "2D", "Simulator"]}
         link={[
           {
-            img: "/github.png",
+            img: "/img/github.png",
             href: "https://github.com/sadasas/AdverGame",
             content: "Source Code",
           },
           {
-            img: "/itchio.png",
+            img: "/img/itchio.png",
             href: "https://wahyusrp.itch.io/oishiforeveryone",
             content: "App",
           },
         ]}
-        images={["oishi/1.png", "/oishi/2.png", "/oishi/3.png", "/oishi/4.png"]}
+        images={[
+          "/img/oishi/1.png",
+          "/img/oishi/2.png",
+          "/img/oishi/3.png",
+          "/img/oishi/4.png",
+        ]}
         isLandscape={false}
       />
     </section>

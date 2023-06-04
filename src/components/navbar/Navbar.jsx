@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 import { HamburgerToggleContext } from "../../context/hamburgerContext";
 import Hamburger from "./hamburger/Hamburger";
-import styles from "../../styles/navbar/Navbar.module.scss";
+import styles from "@/styles/navbar/Navbar.module.scss";
 import ListNavHamburger from "./listnavHamburger/ListNavHamburger";
 
 function ListNav({ text, link }) {
@@ -41,14 +41,14 @@ function Navbar() {
 
   const listNavMotion = {
     hidden: {
-      display: "none",
+      visibility: "hidden",
       transition: {
         when: "afterChildren",
         staggerChildren: 0.3,
       },
     },
     visible: {
-      display: "flex",
+      visibility: "visible",
       transition: {
         when: "beforeChildren",
         staggerChildren: 0.3,
@@ -68,6 +68,10 @@ function Navbar() {
     if (pos > 0 && isHamburgerOpen) setIsHamburgerOpen(false);
   }, [pos]);
 
+  useEffect(() => {
+    console.log(pos);
+  }, [pos]);
+
   return (
     <HamburgerToggleContext.Provider
       value={{
@@ -81,7 +85,7 @@ function Navbar() {
             <h2 className={styles.logo}>WSRP</h2>
             <motion.div
               initial="visible"
-              animate={pos > 0 ? "visible" : "hidden"}
+              animate={pos >= 0 ? "visible" : "hidden"}
               variants={listNavMotion}
               className={styles["list-nav"]}
             >

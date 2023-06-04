@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 
-import styles from "../../../styles/navbar/hamburger/Hamburger.module.scss";
+import styles from "@/styles/navbar/hamburger/Hamburger.module.scss";
 import { Line } from "./Line";
 import { HamburgerToggleContext } from "../../../context/hamburgerContext";
 

@@ -2,8 +2,7 @@ import React, { useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { motion, useInView } from "framer-motion";
 
-import styles from "../../styles/about/About.module.scss";
-import picture from "../../assets/profile.png";
+import styles from "@/styles/about/About.module.scss";
 import Biography from "./Biography";
 import MySkill from "./MySkill";
 
@@ -29,8 +28,8 @@ function Picture() {
       animate={isInView ? "visible" : "hidden"}
     >
       <LazyLoadImage
-        placeholderSrc="/placeholder/200x400.png"
-        src={picture}
+        placeholderSrc="/img/placeholder/200x400.png"
+        src={"/img/profile.png"}
       ></LazyLoadImage>
     </motion.div>
   );

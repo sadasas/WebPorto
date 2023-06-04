@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
-import styles from "../../styles/contact/Contact.module.scss";
+import styles from "@/styles/contact/Contact.module.scss";
 
 function Media({ text, link }) {
   return (

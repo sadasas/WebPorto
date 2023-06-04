@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import { motion, useInView } from "framer-motion";
 
-import styles from "../../styles/about/MySkill.module.scss";
+import styles from "@/styles/about/MySkill.module.scss";
 
 function Skill({ text, logo, level }) {
   const skillMotion = {
@@ -53,15 +53,23 @@ function MySkill() {
         animate={isInView ? "visible" : "hidden"}
         className={styles["mySkill-grid"]}
       >
-        <Skill text="C/C++" logo="/skill/cpp.png" level="Beginner" />
-        <Skill text="C#" logo="/skill/csharp.svg" level="Intermediate" />
-        <Skill logo="/skill/js.png" text="Javascript" level="Intermediate" />
-        <Skill text="Typescript" logo="/skill/ts.png" level="Beginner" />
-        <Skill logo="/skill/react.png" text="React" level="Intermediate" />
-        <Skill text="Unity" logo="/skill/unity.png" level="Intermediate" />
-        <Skill text="MongoDB" logo="/skill/MongoDB.png" level="Intermediate" />
-        <Skill text="Graphql" level="" logo="/skill/GraphQL.png" />
-        <Skill text="Nextjs" level="" logo="/skill/nextjs.svg" />
+        <Skill text="C/C++" logo="/img/skill/cpp.png" level="Beginner" />
+        <Skill text="C#" logo="/img/skill/csharp.svg" level="Intermediate" />
+        <Skill
+          logo="/img/skill/js.png"
+          text="Javascript"
+          level="Intermediate"
+        />
+        <Skill text="Typescript" logo="/img/skill/ts.png" level="Beginner" />
+        <Skill logo="/img/skill/react.png" text="React" level="Intermediate" />
+        <Skill text="Unity" logo="/img/skill/unity.png" level="Intermediate" />
+        <Skill
+          text="MongoDB"
+          logo="/img/skill/MongoDB.png"
+          level="Intermediate"
+        />
+        <Skill text="Graphql" level="" logo="/img/skill/GraphQL.png" />
+        <Skill text="Nextjs" level="" logo="/img/skill/nextjs.svg" />
       </motion.div>
     </div>
   );

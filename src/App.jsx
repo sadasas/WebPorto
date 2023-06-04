@@ -6,8 +6,9 @@ const Contact = React.lazy(() => import("./components/contact/Contact"));
 const Navbar = React.lazy(() => import("./components/navbar/Navbar"));
 const Projects = React.lazy(() => import("./components/Projects/project"));
 
-import "./index.scss";
+import "@/styles/index.scss";
 import Loader from "./components/Loader";
+import Tes from "./components/3d/Tes";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <About />
+
           <Projects />
           <Contact />
         </BrowserRouter>
