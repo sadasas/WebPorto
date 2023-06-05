@@ -8,7 +8,6 @@ const Projects = React.lazy(() => import("./components/Projects/project"));
 
 import "@/styles/index.scss";
 import Loader from "./components/Loader";
-import Tes from "./components/3d/Tes";
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <About />
-
           <Projects />
           <Contact />
         </BrowserRouter>

@@ -68,10 +68,6 @@ function Navbar() {
     if (pos > 0 && isHamburgerOpen) setIsHamburgerOpen(false);
   }, [pos]);
 
-  useEffect(() => {
-    console.log(pos);
-  }, [pos]);
-
   return (
     <HamburgerToggleContext.Provider
       value={{

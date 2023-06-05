@@ -1,0 +1,21 @@
+@use "@/styles/variables" as *;
+
+.container {
+  width: 50%;
+  height: 300px;
+  position: relative;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@include respond(small) {
+  .container {
+    width: 100%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@include respond(medium) {
+  .container {
+    width: 100%;
+  }
+}
