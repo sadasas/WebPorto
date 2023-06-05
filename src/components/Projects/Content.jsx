@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { Carousel } from "react-responsive-carousel";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-import styles from "@/styles/project/content.module.scss";
+import styles from "@styles/project/content.module.scss";
 
 export function Content({
   title,

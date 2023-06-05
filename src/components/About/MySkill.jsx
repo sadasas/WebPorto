@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import { motion, useInView } from "framer-motion";
 
-import styles from "@/styles/about/MySkill.module.scss";
+import styles from "@styles/about/MySkill.module.scss";
 
 function Skill({ text, logo, level }) {
   const skillMotion = {
@@ -68,8 +68,9 @@ function MySkill() {
           logo="/img/skill/MongoDB.png"
           level="Intermediate"
         />
-        <Skill text="Graphql" level="" logo="/img/skill/GraphQL.png" />
+        <Skill text="Graphql" level="Beginner" logo="/img/skill/GraphQL.png" />
         <Skill text="Nextjs" level="" logo="/img/skill/nextjs.svg" />
+        <Skill text="Docker" level="Beginner" logo="/img/skill/docker.svg" />
       </motion.div>
     </div>
   );

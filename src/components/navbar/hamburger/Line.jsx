@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 
-import styles from "@/styles/navbar/hamburger/Hamburger.module.scss";
+import styles from "@styles/navbar/hamburger/Hamburger.module.scss";
 import { HamburgerToggleContext } from "@/context/hamburgerContext";
 
 export function Line({ index }) {

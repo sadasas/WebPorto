@@ -3,7 +3,7 @@ import { HashLink } from "react-router-hash-link";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
-import styles from "@/styles/navbar/list_nav_hamburger/List.module.scss";
+import styles from "@styles/navbar/list_nav_hamburger/List.module.scss";
 import { HamburgerToggleContext } from "@/context/hamburgerContext";
 
 export function List({ text, index, link }) {

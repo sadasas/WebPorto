@@ -7,12 +7,12 @@ const Navbar = React.lazy(() => import("./components/navbar/Navbar"));
 const Projects = React.lazy(() => import("./components/Projects/project"));
 
 import "@/styles/index.scss";
-import Loader from "./components/Loader";
+import PageLoader from "./components/loaders/PageLoader";
 
 function App() {
   return (
     <>
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<PageLoader />}>
         <BrowserRouter>
           <Navbar />
           <About />

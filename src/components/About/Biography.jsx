@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import { motion, useInView } from "framer-motion";
 
-import styles from "@/styles/about/Biography.module.scss";
+import styles from "@styles/about/Biography.module.scss";
 import TypedText from "./TypedText";
 
 const job = ["GAME PROGAMMER", "REACT DEVELOPER"];

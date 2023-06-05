@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { motion } from "framer-motion";
 
-import styles from "@/styles/navbar/list_nav_hamburger/ListNavHamburger.module.scss";
+import styles from "@styles/navbar/list_nav_hamburger/ListNavHamburger.module.scss";
 import { List } from "./List";
 import { HamburgerToggleContext } from "@/context/hamburgerContext";
 

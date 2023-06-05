@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { HashLink } from "react-router-hash-link";
 import { motion } from "framer-motion";
 
-import { HamburgerToggleContext } from "../../context/hamburgerContext";
+import { HamburgerToggleContext } from "@/context/hamburgerContext";
 import Hamburger from "./hamburger/Hamburger";
-import styles from "@/styles/navbar/Navbar.module.scss";
+import styles from "@styles/navbar/Navbar.module.scss";
 import ListNavHamburger from "./listnavHamburger/ListNavHamburger";
 
 function ListNav({ text, link }) {
