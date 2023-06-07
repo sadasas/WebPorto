@@ -85,7 +85,6 @@ function Navbar() {
               variants={listNavMotion}
               className={styles["list-nav"]}
             >
-              <ListNav link="#home" text="Home"></ListNav>
               <ListNav link="#projects" text="Works"></ListNav>
               <ListNav index={3} pos={pos} link="#about" text="About"></ListNav>
               <ListNav link="#contact" text="Contact"></ListNav>

@@ -26,9 +26,6 @@
   width: 100%;
   align-items: center;
   overflow: hidden;
-  & > * {
-    flex: 1 1 0;
-  }
 }
 
 .photo {
@@ -50,6 +47,10 @@
 
 /* Extra small devices (phones, 600px and down) */
 @include respond(small) {
+  .container {
+    margin-top: 0;
+  }
+
   .bio-container {
     flex-direction: column;
     align-items: center;
@@ -58,6 +59,10 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @include respond(medium) {
+  .container {
+    margin-top: 0;
+  }
+
   .bio-container {
     flex-direction: column;
     align-items: center;
