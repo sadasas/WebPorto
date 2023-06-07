@@ -25,4 +25,9 @@ $cursor-color: white;
       @content;
     }
   }
+  @if ($breakpoint == extraSmall) {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  }
 }
