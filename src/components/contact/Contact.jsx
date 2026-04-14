@@ -43,10 +43,12 @@ function Contact() {
             <h3>setio101199@gmail.com</h3>
           </a>
           <div className={styles["social-media"]}>
-            <Media
+           
+             <Media
               text="instagram"
-              link="https://www.instagram.com/wahyu_srp/"
+              link="https://www.instagram.com/wahyu/"
             />
+            
             <Media
               text="linkedin"
               link="https://www.linkedin.com/in/wahyu-setio-rilo-pambudi-54381b146/"
