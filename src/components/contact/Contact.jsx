@@ -51,7 +51,7 @@ function Contact() {
             
             <Media
               text="linkedin"
-              link="https://www.linkedin.com/in/wahyu-setio-rilo-pambudi-54381b146/"
+              link="https://www.linkedin.com/in/wahyu-s-54381b146?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
             />
             <Media text="twitter" link="https://twitter.com/wwww80086302" />
           </div>
