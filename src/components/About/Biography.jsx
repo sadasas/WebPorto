@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import styles from "@styles/about/Biography.module.scss";
 import TypedText from "./TypedText";
 
-const job = ["GAME PROGAMMER", "REACT DEVELOPER"];
+const job = ["GAME PROGAMMER", "FULLSTACK WEB DEVELOPER"];
 function Biography() {
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -34,8 +34,11 @@ function Biography() {
       <TypedText text={job} delay={100} />
 
       <h3 className={styles.description}>
-        A freelancer who provides services for game development and web
-        development, and an explorer who is passionate about technology{" "}
+       I am a Fullstack Web Developer and Game Programmer with a strong foundation in modern web
+technologies and interactive development. I have experience in building responsive, scalable, and user-
+friendly applications with a focus on code quality and performance. I am committed to continuous learning
+and professional growth, and I am eager to contribute effectively within a collaborative team to deliver
+impactful digital solutions.
       </h3>
     </motion.div>
   );
