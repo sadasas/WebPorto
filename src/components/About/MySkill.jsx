@@ -55,6 +55,7 @@ function MySkill() {
       >
         <Skill text="C/C++" logo="/img/skill/cpp.png" level="Beginner" />
         <Skill text="C#" logo="/img/skill/csharp.svg" level="Intermediate" />
+         <Skill text="PHP" logo="/img/skill/php.png" level="Intermediate" />
         <Skill
           logo="/img/skill/js.png"
           text="Javascript"
